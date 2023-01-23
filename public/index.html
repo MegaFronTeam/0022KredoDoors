@@ -16,47 +16,78 @@
 	</head>
 	<body class="main-page">
 		<div class="main-wrapper">
+			<div class="menu-mobile menu-mobile--js">
+				<div class="menu-mobile__inner">
+					<nav>
+						<ul class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+							<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Наши работы</a></li>
+							<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Цены</a></li>
+							<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Калькулятор</a></li>
+							<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Акции</a></li>
+							<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Заказать</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<!--  мобильное меню-->
 			<!-- start header-->
 			<header class="header" id="header">
 				<!-- start top-nav-->
 				<div class="top-nav block-with-lazy">
 					<div class="container">
-						<div class="row">
-							<div class="col order-lg-0 order-last">
-								<div class="menu-mobile menu-mobile--js">
-									<div class="menu-mobile__inner">
-										<div class="toggle-menu-mobile toggle-menu-mobile--js d-lg-none"><span></span>
+						<div class="top-nav__row row align-items-center">
+							<div class="col-auto p-md-0">
+								<a class="top-nav__logo" href="#"><img src="img/logo.png" alt="" loading="lazy"/>
+								</a>
+							</div>
+							<div class="col-auto col-md order-last order-md-0">
+								<div class="top-nav__menu-wrap">
+									<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
+									</div>
+									<p class="d-none d-lg-block">Меню</p>
+								</div>
+							</div>
+							<div class="top-nav__col col">
+								<div class="top-nav__inner-row row">
+									<div class="col-auto">
+										<div class="top-nav__links">
+											<a class="top-nav__link" href="#">
+												<svg class="icon icon-cart ">
+													<use xlink:href="img/svg/sprite.svg#cart"></use>
+												</svg>
+											</a>
+											<a class="top-nav__link" href="#">
+												<svg class="icon icon-heart ">
+													<use xlink:href="img/svg/sprite.svg#heart"></use>
+												</svg>
+											</a>
 										</div>
-										<nav>
-											<ul class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-												<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Наши работы</a></li>
-												<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Цены</a></li>
-												<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Калькулятор</a></li>
-												<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Акции</a></li>
-												<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Заказать</a></li>
-											</ul>
-										</nav>
+									</div>
+									<div class="col-auto">
+										<a class="top-nav__lang active" href="#">RU / 
+										</a>
+										<a class="top-nav__lang" href="#">EN
+										</a>
 									</div>
 								</div>
 							</div>
-							<div class="col-auto d-lg-none">
-								<div class="toggle-menu-mobile toggle-menu-mobile--js d-lg-none"><span></span>
+						</div>
+						<div class="top-nav__row row d-none d-md-flex">
+							<div class="col">
+								<div class="top-nav__search">
+									<svg class="icon icon-search ">
+										<use xlink:href="img/svg/sprite.svg#search"></use>
+									</svg>Поиск по сайту
+								</div>
+							</div>
+							<div class="top-nav__col col">
+								<div class="top-nav__contact">Связь с компанией <a href="tel:+74952482017">+7 (495) 248-20-17</a>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 				<!-- end top-nav-->
-				<!-- start topLine-->
-				<div class="topLine section" id="topLine">
-					<div class="container">
-						<div class="section-title text-center">
-							<h2>topLine</h2>
-						</div>
-						<div class="row"></div>
-					</div>
-				</div>
-				<!-- end topLine-->
 			</header>
 			<!-- end header-->
 			<main>

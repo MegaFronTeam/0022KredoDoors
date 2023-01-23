@@ -1,5 +1,5 @@
 mixin menu-toggle()
-	+b.toggle-menu-mobile--js.d-lg-none
+	+b.toggle-menu-mobile--js
 		span
 mixin mob-mnu()
 	-
@@ -12,8 +12,6 @@ mixin mob-mnu()
 		//- let dataJson = JSON.parse(json);
 	//- h1= dataJson['lala'] 
 	+b.menu-mobile--js
-		+b.toggle-menu-mobile--js
-			span
 		+e.inner
 			+mnu()
 	//  мобильное меню
@@ -21,13 +19,34 @@ mixin top-nav()
 	// start top-nav
 	+b.top-nav.block-with-lazy
 		.container
-			.row
-				.col.order-lg-0.order-last
-					.menu-mobile.menu-mobile--js
-						.menu-mobile__inner
-							+menu-toggle()
-							+mnu()
-					
-				.col-auto.d-lg-none
-					+menu-toggle()
+			+e.row.row.align-items-center
+				.col-auto.p-md-0
+					+e.logo(href='#')
+						+img('img/logo.png')
+				.col-auto.col-md.order-last.order-md-0
+					+e.menu-wrap
+						+menu-toggle()
+						p.d-none.d-lg-block Меню
+					//- .menu-mobile.menu-mobile--js
+					//- 	.menu-mobile__inner
+					//- 		+menu-toggle()
+					//- 		+mnu()
+				+e.col.col
+					+e.inner-row.row
+						.col-auto
+							+e.links
+								+e.link(href='#'): +icon('cart')
+								+e.link(href='#'): +icon('heart')
+						.col-auto
+							+e.lang.active(href="#") RU / 
+							+e.lang(href="#") EN
+			+e.row.row.d-none.d-md-flex
+				.col
+					+e.search
+						+icon('search')
+						| Поиск по сайту
+					//- +search
+				+e.col.col
+					+e.contact Связь с компанией 
+						a(href="tel:+74952482017") +7 (495) 248-20-17
 	// end top-nav
