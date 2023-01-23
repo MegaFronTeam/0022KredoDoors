@@ -13,6 +13,9 @@
 	}
 	&__col {
 		flex-grow: 1;
+		@include media-breakpoint-up(lg) {
+			flex-grow: 1;
+		}
 		&--title {
 			@include media-breakpoint-down(md) {
 				order: -1;
@@ -45,7 +48,6 @@
 				}
 				@include media-breakpoint-up(lg) {
 					font-size: rem(14);
-
 				}
 				&:last-child {
 					margin-bottom: 0;
