@@ -383,6 +383,56 @@ function eventHandler() {
 
 	// modal window
 
+	var interleaveOffset = 0.5;
+
+	var swiperOptions = {
+		loop: true,
+		speed: 1000,
+		grabCursor: true,
+		watchSlidesProgress: true,
+		mousewheelControl: true,
+		keyboardControl: true,
+		parallax: true,
+		autoplay: {
+					delay: 5000,
+				},
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev"
+		},
+		pagination: {
+			el: ".swiper-pagination",
+			type: 'bullets',
+			clickable: true,
+		},
+		on: {
+			progress: function() {
+				var swiper = this;
+				for (var i = 0; i < swiper.slides.length; i++) {
+					var slideProgress = swiper.slides[i].progress;
+					var innerOffset = swiper.width * interleaveOffset;
+					var innerTranslate = slideProgress * innerOffset;
+					// swiper.slides[i].querySelector(".headerBlock__img-wrap").style.transform = 
+					// "translate3d(" + innerTranslate + "px, 0, 0)";
+					swiper.slides[i].querySelector("img").style.transform = "translate3d(" + innerTranslate + "px, 0, 0)";
+				}      
+			},
+			touchStart: function(swiper) { 
+				for (var i = 0; i < swiper.slides.length; i++) {
+					swiper.slides[i].style.transition = "";
+				} 
+			},
+			setTransition: function(swiper, transition) { 
+				for (var i = 0; i < swiper.slides.length; i++) {
+					swiper.slides[i].style.transition = transition + "ms";
+					// swiper.slides[i].querySelector(".headerBlock__img-wrap").style.transition = transition + "ms";
+					swiper.slides[i].querySelector("img").style.transition = transition + "ms";
+				} 
+			}
+		}
+	};
+
+	var swiper144 = new Swiper(".headerBlock--js", swiperOptions);
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

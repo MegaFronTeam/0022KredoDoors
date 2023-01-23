@@ -1,17 +1,14 @@
 mixin headerBlock()
 	// start headerBlock
-	+b.headerBlock.section#headerBlock&attributes(attributes)
-		.container
-			+b.section-title.text-center
-				h2 headerBlock 32186432185435618431853
-			.row
-				.col-auto
-					+e.btn.btn.btn-primary(href="#") Узнать больше
-				.col-auto
-					+e.btn.btn.btn-dark(href="#") Узнать больше
-			+form-wrap
-				+input('placeholder', 'text', 'label*')
-				+input('placeholder', 'tel', 'label*')
-				+input('placeholder', 'text', 'label*')
-				+input('placeholder', 'tel', 'label*')
+	+b.headerBlock--js.swiper.section#headerBlock&attributes(attributes)
+		.swiper-wrapper
+			+e.slide.swiper-slide.bg-wrap
+				+e.img-wrap
+					+img('img/headerBlock-img-1.png', 'bg').picture-bg
+			+e.slide.swiper-slide
+				+e.img-wrap
+					+img('img/headerBlock-img-1.png', 'bg').picture-bg
+			+e.slide.swiper-slide
+				+e.img-wrap
+					+img('img/headerBlock-img-1.png', 'bg').picture-bg
 	// end headerBlock
