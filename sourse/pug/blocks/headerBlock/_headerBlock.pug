@@ -1,0 +1,17 @@
+mixin headerBlock()
+	// start headerBlock
+	+b.headerBlock.section#headerBlock&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h2 headerBlock 32186432185435618431853
+			.row
+				.col-auto
+					+e.btn.btn.btn-primary(href="#") Узнать больше
+				.col-auto
+					+e.btn.btn.btn-dark(href="#") Узнать больше
+			+form-wrap
+				+input('placeholder', 'text', 'label*')
+				+input('placeholder', 'tel', 'label*')
+				+input('placeholder', 'text', 'label*')
+				+input('placeholder', 'tel', 'label*')
+	// end headerBlock
