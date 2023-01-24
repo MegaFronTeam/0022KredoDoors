@@ -1,0 +1,75 @@
+mixin check-btn(typ="checkbox", text, checkColor, name= typ)
+	if checkColor
+		+b.LABEL.check-btn.check-btn--colored(style=`--checkColor: ${checkColor};`)
+			+e.INPUT.input(name=name, type=typ)&attributes(attributes)
+			+e.SPAN.btn!= text
+	else
+		+b.LABEL.check-btn
+			+e.INPUT.input(name=name, type=typ)&attributes(attributes)
+			+e.SPAN.btn!= text
+
+mixin sOptions(data)
+	// start sOptions
+	+b.SECTION.sOptions.section#sOptions&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h2 Поиск по&nbsp;параметрам
+				p Волховец предлагает не&nbsp;только широкую гамму моделей по&nbsp;стилям, но&nbsp;и&nbsp;богатый выбор по&nbsp;материалам отделки.
+			+e.wrap.dd-group-js
+				+e.group
+					+e.group-head.dd-head-js.dd-head-js
+						h3 Материал
+					+e.group-content.dd-content-js
+						.row
+							.col-6.col-sm-4.col-lg-2
+								+check-btn('checkbox', 'Массив')
+							.col-6.col-sm-4.col-lg-2
+								+check-btn('checkbox', 'Грунт под покраску')
+							.col-6.col-sm-4.col-lg-2
+								+check-btn('checkbox', 'Шпон')
+							.col-6.col-sm-4.col-lg-2
+								+check-btn('checkbox', 'Ciplex')
+							.col-6.col-sm-4.col-lg-2
+								+check-btn('checkbox', 'Алюминий и стекло')
+							.col-6.col-sm-4.col-lg-2
+								+check-btn('checkbox', 'Эмаль')
+							.col-6.col-sm-4.col-lg-2
+								+check-btn('checkbox', 'Technofoil ламинатин')
+							.col-6.col-sm-4.col-lg-2
+								+check-btn('checkbox', 'HPL')
+							.col-6.col-sm-4.col-lg-2
+								+check-btn('checkbox', 'Duo')
+
+				+e.group
+					+e.group-head.dd-head-js
+						h3 Стиль
+					+e.group-content.dd-content-js
+						.row
+							.col-6.col-sm-4.col-lg-2
+								+check-btn('checkbox', 'Современный стиль')
+							.col-6.col-sm-4.col-lg-2
+								+check-btn('checkbox', 'Дизайн')
+							.col-6.col-sm-4.col-lg-2
+								+check-btn('checkbox', 'Классика')
+							.col-6.col-sm-4.col-lg-2
+								+check-btn('checkbox', 'Неоклассика')
+
+				+e.group
+					+e.group-head.dd-head-js
+						h3 Материал
+					+e.group-content.dd-content-js
+						.row
+							.col-6.col-sm-4.col-lg-2
+								+check-btn('checkbox', 'Белый', '#FFFFFF')
+							.col-6.col-sm-4.col-lg-2
+								+check-btn('checkbox', 'Серый', '#DEDEDE')
+							.col-6.col-sm-4.col-lg-2
+								+check-btn('checkbox', 'Светло-коричневый', '#F2E4BA')
+							.col-6.col-sm-4.col-lg-2
+								+check-btn('checkbox', 'Темно-коричневый', '#633007')
+							.col-6.col-sm-4.col-lg-2
+								+check-btn('checkbox', 'Черный', '#000000')
+			+e.btn-wrap
+				+e.btn.btn.btn-dark(href='#') Показать выбранные
+
+	// end sOptions
