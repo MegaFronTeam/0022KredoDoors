@@ -1,6 +1,7 @@
 mixin menu-toggle()
 	+b.toggle-menu-mobile--js
 		span
+		p.d-none.d-lg-block Меню
 mixin mob-mnu()
 	-
 		//- let path = require('path');
@@ -12,8 +13,26 @@ mixin mob-mnu()
 		//- let dataJson = JSON.parse(json);
 	//- h1= dataJson['lala'] 
 	+b.menu-mobile--js
+		+e.head
+			+menu-toggle()
 		+e.inner
+			+b.search-block
+				form
+					input(type="text" placeholder="Поиск по сайту")
+					span.line
+					button 
+						+icon("search")
 			+mnu()
+			+e.UL.list
+				li: a(href="#") О компании
+				li: a(href="#") Дизайнерам
+				li: a(href="#") Корпоративным клиентам
+				li: a(href="#") Полезно
+				li: a(href="#") Пресс-центр
+				li: a(href="#") Блог
+			+e.soc-wrap
+				p Мы в соцсетях
+				+soc
 	//  мобильное меню
 mixin top-nav() 
 	// start top-nav
@@ -26,7 +45,7 @@ mixin top-nav()
 				.col-auto.col-md.order-last.order-md-0
 					+e.menu-wrap
 						+menu-toggle()
-						p.d-none.d-lg-block Меню
+						//- p.d-none.d-lg-block Меню
 					//- .menu-mobile.menu-mobile--js
 					//- 	.menu-mobile__inner
 					//- 		+menu-toggle()

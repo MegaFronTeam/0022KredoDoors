@@ -1,7 +1,7 @@
  
 	  
 .soc{
-	@include roww(10px, m);
+	@include roww(20px, m);
 	display: flex;
 	&__item{
 		text-decoration: none !important; 
@@ -15,8 +15,22 @@
 		}
 		
 	}
+	&__item {
+		width: rem(40);
+		height: rem(40);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: #cecece;
+		color: #fff;
+		&:hover {
+			color: #000;
+			background-color: #fff;
+		}
+	}
 	.icon{
-		font-size: rem(30);
+		flex: 0 0 auto;
+		font-size: rem(22);
 	}
 
 
