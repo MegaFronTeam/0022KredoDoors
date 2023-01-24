@@ -13,6 +13,8 @@ include ../blocks/sForm/_sForm.pug
 include ../blocks/sCatalog/_sCatalog.pug
 include ../blocks/footer/_footer.pug
 
+include ../blocks/sCardWrap/_sCardWrap.pug
+
 block variables
 	- let  mainPage= 'main-page' 
 	- let  bg= null
@@ -29,7 +31,84 @@ block pagecontent
 		//- +topLine
 	main
 		+headerBlock
-		
+		+sCardWrap('true')
+			+e.row.row
+				.col-md-6
+					+card-item({
+						img: 'card-img-1.jpg',
+						title: 'Классика', 
+						text: 'Решения вне времени для интерьеров со смыслом'
+					})
+				.col-md-6
+					+card-item({
+						img: 'card-img-2.jpg',
+						title: 'Неоклассика', 
+						text: 'Свежий взгляд на традиционный дизайн'
+					})
+				.col-md-6
+					+card-item({
+						img: 'card-img-3.jpg',
+						title: 'Современный стиль', 
+						text: 'Акцент на геометрию и красоту простых форм'
+					})
+				.col-md-6
+					+card-item({
+						img: 'card-img-4.jpg',
+						title: 'Дизайн', 
+						text: 'Смелые тенденции в оформлении вашего дома'
+					})
+		+sCardWrap()
+			+e.row.row
+				.col-md-6
+					+card-item({
+						img: 'card-img-5.jpg',
+						title: 'Системы', 
+						text: 'Интерьерные конструкции созданные в единой стилистике с дверями'
+					})
+				.col-md-6
+					+card-item({
+						img: 'card-img-6.jpg',
+						title: 'Аксессуары', 
+						text: 'Стильная фурнитура для комфортной и надежной работы дверей и систем'
+					})
+		+sCardWrap()
+			+e.row.row
+				.col-md-4
+					+card-item({
+						img: 'card-img-7.jpg',
+						title: 'Широкая сеть салонов',
+						notBtn: true
+					}).--solid
+				.col-md-4
+					+card-item({
+						img: 'card-img-8.jpg',
+						title: 'Консультации',
+						notBtn: true
+					}).--solid
+				.col-md-4
+					+card-item({
+						img: 'card-img-9.jpg',
+						title: 'Марка №1',
+						notBtn: true
+					}).--solid
+				.col-md-4
+					+card-item({
+						img: 'card-img-10.jpg',
+						title: 'Гарантия качества',
+						notBtn: true
+					}).--solid
+				.col-md-4
+					+card-item({
+						img: 'card-img-11.jpg',
+						title: 'Широкий ассортимент',
+						notBtn: true
+					}).--solid
+				.col-md-4
+					+card-item({
+						img: 'card-img-12.jpg',
+						title: 'Профессиональный сервис',
+						notBtn: true
+					}).--solid
 	+footer()
       
 
