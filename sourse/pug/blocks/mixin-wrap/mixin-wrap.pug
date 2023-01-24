@@ -45,3 +45,19 @@ mixin page-head(t,...items)
 			+breadcrumb('Главная',...items)
 
 			h1= t
+
+mixin card-item(data)
+	+b.card&attributes(attributes)
+		+e.img-wrap(href='#')
+			.img-wrap-center
+				+img(`img/${data.img}`, 'bg')
+		+e.content
+			+e.content-row.row
+				.col-md
+					if data.title
+						+e.title.h5!= data.title
+					if data.text
+						+e.text!= data.text
+				if !data.notBtn
+					.col-md-auto
+						+e.btn.btn.btn-primary(href="#") Узнать больше

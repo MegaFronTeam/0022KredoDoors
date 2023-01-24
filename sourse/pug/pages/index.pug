@@ -13,12 +13,15 @@ include ../blocks/sForm/_sForm.pug
 include ../blocks/sCatalog/_sCatalog.pug
 include ../blocks/footer/_footer.pug
 
+include ../blocks/sCardWrap/_sCardWrap.pug
+include ../blocks/sInfoBlock/_sInfoBlock.pug
+
 block variables
 	- let  mainPage= 'main-page' 
 	- let  bg= null
 
 block title
-	- let  title= index.head.title
+	- let  title= 'Главная'
 	title= title
 block pagecontent
 	+mob-mnu()
@@ -29,7 +32,87 @@ block pagecontent
 		//- +topLine
 	main
 		+headerBlock
-		
+		+sCardWrap('true')
+			+e.row.row
+				.col-md-6
+					+card-item({
+						img: 'card-img-1.jpg',
+						title: 'Классика', 
+						text: 'Решения вне времени для интерьеров со смыслом'
+					})
+				.col-md-6
+					+card-item({
+						img: 'card-img-2.jpg',
+						title: 'Неоклассика', 
+						text: 'Свежий взгляд на традиционный дизайн'
+					})
+				.col-md-6
+					+card-item({
+						img: 'card-img-3.jpg',
+						title: 'Современный стиль', 
+						text: 'Акцент на геометрию и красоту простых форм'
+					})
+				.col-md-6
+					+card-item({
+						img: 'card-img-4.jpg',
+						title: 'Дизайн', 
+						text: 'Смелые тенденции в оформлении вашего дома'
+					})
+		+sInfoBlock('sInfoBlock-bg-1.jpg', 'Безграничный выбор', 'Классика или минимализм, массив или современные отделки, подберите свою идеальную дверь.', 'Узнать больше')
+		+sCardWrap()
+			+e.row.row
+				.col-md-6
+					+card-item({
+						img: 'card-img-5.jpg',
+						title: 'Системы', 
+						text: 'Интерьерные конструкции созданные в единой стилистике с дверями'
+					})
+				.col-md-6
+					+card-item({
+						img: 'card-img-6.jpg',
+						title: 'Аксессуары', 
+						text: 'Стильная фурнитура для комфортной и надежной работы дверей и систем'
+					})
+		+sInfoBlock('sInfoBlock-bg-2.jpg', 'Входные двери', 'Безопасность может быть элегантной', 'SAFE | Входные двери')
+		+sInfoBlock('sInfoBlock-bg-3.jpg', 'Фирменные салоны', 'Познакомьтесь с&nbsp;широким выбром дверей Волховец в&nbsp;атмосфере внимания и&nbsp;профессиональных знаний', 'Найти салон')
+		+sCardWrap()
+			+e.row.row
+				.col-sm-6.col-lg-4
+					+card-item({
+						img: 'card-img-7.jpg',
+						title: 'Широкая сеть салонов',
+						notBtn: true
+					}).--solid
+				.col-sm-6.col-lg-4
+					+card-item({
+						img: 'card-img-8.jpg',
+						title: 'Консультации',
+						notBtn: true
+					}).--solid
+				.col-sm-6.col-lg-4
+					+card-item({
+						img: 'card-img-9.jpg',
+						title: 'Марка №1',
+						notBtn: true
+					}).--solid
+				.col-sm-6.col-lg-4
+					+card-item({
+						img: 'card-img-10.jpg',
+						title: 'Гарантия качества',
+						notBtn: true
+					}).--solid
+				.col-sm-6.col-lg-4
+					+card-item({
+						img: 'card-img-11.jpg',
+						title: 'Широкий ассортимент',
+						notBtn: true
+					}).--solid
+				.col-sm-6.col-lg-4
+					+card-item({
+						img: 'card-img-12.jpg',
+						title: 'Профессиональный сервис',
+						notBtn: true
+					}).--solid
 	+footer()
       
 

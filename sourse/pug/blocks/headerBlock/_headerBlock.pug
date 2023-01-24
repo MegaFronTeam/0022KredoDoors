@@ -3,12 +3,18 @@ mixin headerBlock()
 	+b.headerBlock--js.swiper.section#headerBlock&attributes(attributes)
 		.swiper-wrapper
 			+e.slide.swiper-slide.bg-wrap
-				+e.img-wrap
+				+e.img-wrap(href='#')
 					+img('img/headerBlock-img-1.png', 'bg').picture-bg
 			+e.slide.swiper-slide
-				+e.img-wrap
-					+img('img/headerBlock-img-1.png', 'bg').picture-bg
+				+e.img-wrap(href='#')
+					+img('img/headerBlock-img-2.png', 'bg').picture-bg
 			+e.slide.swiper-slide
-				+e.img-wrap
-					+img('img/headerBlock-img-1.png', 'bg').picture-bg
+				+e.img-wrap(href='#')
+					+img('img/headerBlock-img-3.png', 'bg').picture-bg
+			+e.slide.swiper-slide
+				+e.img-wrap(href='#')
+					+img('img/headerBlock-img-4.png', 'bg').picture-bg
+			+e.slide.swiper-slide
+				+e.img-wrap(href='#')
+					+img('img/headerBlock-img-5.png', 'bg').picture-bg
 	// end headerBlock
