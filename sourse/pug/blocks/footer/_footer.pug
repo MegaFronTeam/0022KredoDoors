@@ -2,7 +2,11 @@ mixin footer()
 	+b.FOOTER.footer.section
 		.container
 			+e.row.row
-				+e.col.col-lg-auto
+				+e.col.col-sm-auto.order-lg-last
+					+e.social
+						small Следите за&nbsp;нами
+						+soc()
+				+e.col.col-lg-auto.d-none.d-sm-block
 					+e.item
 						h5 Двери
 						+e.item-wrap
@@ -48,7 +52,7 @@ mixin footer()
 							ul
 								li: a(href="#") Алюминиевые двери
 								li: a(href="#") Алюминиевые перегородки Formato
-				+e.col.col-lg-auto.d-none.d-xl-block
+				+e.col.col-lg-auto.d-none.d-xxl-block
 					+e.item
 						H5 Подборки
 						ul
@@ -62,7 +66,8 @@ mixin footer()
 							li: a(href="#") Двери орех
 							li: a(href="#") Двери с зеркалом
 							li: a(href="#") Шпон ясень
-				+e.col.col-auto.col-sm-6.col-lg-auto
+					//- +e.col.col-auto.col-sm-6.col-lg-auto.d-none.d-lg-block
+				+e.col.col-lg-auto.d-none.d-xl-block
 					+e.item
 						H5 Аксессуары
 						ul
@@ -75,24 +80,29 @@ mixin footer()
 							li: a(href="#") Установка
 							li: a(href="#") Гарантия
 							li: a(href="#") Сертификаты
-				+e.col.col-auto.col-sm-6.col-lg-auto
-					+e.item
-						H5 Двери кредо
-						ul
-							li: a(href="tel:+74952482017") +7 (495) 248-20-17
-							li: a(href="mailto:sales@dveri-kredo.ru") sales@dveri-kredo.ru
-							li: span Россия, г. Подольск, ул. Комсомольская д.1 ст.22
-					+e.item
-						H5 Компания
-						ul
-							li: a(href="#") О&nbsp;компании
-							li: a(href="#") Новости
-							li: a(href="#") Где купить
-							li: a(href="#") Акции
-							li: a(href="#") Дизайнерам
-							li: a(href="#") Правовая информация
-				+e.col.col-lg-auto
-					+e.social
-						small Следите за&nbsp;нами
-						+soc()
+				+e.col--title.col.col-lg-auto
+					+e.wapper
+						+e.item
+							H5 Двери кредо
+							ul
+								li: a(href="tel:+74952482017") +7 (495) 248-20-17
+								li: a(href="mailto:sales@dveri-kredo.ru") sales@dveri-kredo.ru
+								li: span Россия, г. Подольск, ул. Комсомольская д.1 ст.22
+						+e.item
+							H5 Компания
+							ul
+								li: a(href="#") О&nbsp;компании
+								li: a(href="#") Новости
+								li: a(href="#") Где купить
+								li: a(href="#") Акции
+								li: a(href="#") Дизайнерам
+								li: a(href="#") Правовая информация
+			+e.logo-wrap
+				+e.logo(href='#')
+					+img('img/footer-logo.png')
+			+e.info
+				+e.copyright © Двери Кредо, #[span.currentYear]
+				+e.legal
+					span Не&nbsp;является публичной офертой
+					a(href="#") Карта сайта
 
