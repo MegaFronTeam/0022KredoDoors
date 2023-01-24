@@ -8,7 +8,10 @@
 		padding: 0;
 	}
 	&__container {
-		--bs-gutter-x: #{rem(90)};
+		--bs-gutter-x: #{rem(30)};
+		@include media-breakpoint-up(lg) {
+			--bs-gutter-x: #{rem(90)};
+		}
 	}
 	&__row{
 		--bs-gutter-x: #{rem(20)};
