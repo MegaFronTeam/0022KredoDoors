@@ -1,0 +1,9 @@
+mixin sInfoBlock(bgImg, title, text, btnText)
+	// start sInfoBlock
+	+b.SECTION.sInfoBlock.section#sInfoBlock(style=`--bgImage: url(../img/${bgImg})`)&attributes(attributes)
+		.container
+			+b.section-title
+				h2.h1!= title
+				p!= text
+				+e.btn.btn.btn-outline-light(href='#')!= btnText
+	// end sInfoBlock

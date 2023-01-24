@@ -14,6 +14,7 @@ include ../blocks/sCatalog/_sCatalog.pug
 include ../blocks/footer/_footer.pug
 
 include ../blocks/sCardWrap/_sCardWrap.pug
+include ../blocks/sInfoBlock/_sInfoBlock.pug
 
 block variables
 	- let  mainPage= 'main-page' 
@@ -57,6 +58,7 @@ block pagecontent
 						title: 'Дизайн', 
 						text: 'Смелые тенденции в оформлении вашего дома'
 					})
+		+sInfoBlock('sInfoBlock-bg-1.jpg', 'Безграничный выбор', 'Классика или минимализм, массив или современные отделки, подберите свою идеальную дверь.', 'Узнать больше')
 		+sCardWrap()
 			+e.row.row
 				.col-md-6
@@ -71,6 +73,8 @@ block pagecontent
 						title: 'Аксессуары', 
 						text: 'Стильная фурнитура для комфортной и надежной работы дверей и систем'
 					})
+		+sInfoBlock('sInfoBlock-bg-2.jpg', 'Входные двери', 'Безопасность может быть элегантной', 'SAFE | Входные двери')
+		+sInfoBlock('sInfoBlock-bg-3.jpg', 'Фирменные салоны', 'Познакомьтесь с&nbsp;широким выбром дверей Волховец в&nbsp;атмосфере внимания и&nbsp;профессиональных знаний', 'Найти салон')
 		+sCardWrap()
 			+e.row.row
 				.col-sm-6.col-lg-4
