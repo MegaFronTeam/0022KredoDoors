@@ -11,6 +11,7 @@ include ../blocks/sContact/_sContact.pug
 include ../blocks/sForm/_sForm.pug
 include ../blocks/sForm/_sForm.pug
 include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sOptions/_sOptions.pug
 include ../blocks/footer/_footer.pug
 
 include ../blocks/sCardWrap/_sCardWrap.pug
@@ -74,6 +75,9 @@ block pagecontent
 						text: 'Стильная фурнитура для комфортной и надежной работы дверей и систем'
 					})
 		+sInfoBlock('sInfoBlock-bg-2.jpg', 'Входные двери', 'Безопасность может быть элегантной', 'SAFE | Входные двери')
+		
+		+sOptions()
+
 		+sInfoBlock('sInfoBlock-bg-3.jpg', 'Фирменные салоны', 'Познакомьтесь с&nbsp;широким выбром дверей Волховец в&nbsp;атмосфере внимания и&nbsp;профессиональных знаний', 'Найти салон')
 		+sCardWrap()
 			+e.row.row

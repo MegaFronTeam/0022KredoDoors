@@ -1,0 +1,161 @@
+// start .sOptions
+.sOptions {
+	// --sPT: #{rem()};
+	// --sPB: #{rem()};
+	--sTPB: #{rem(35)};
+	@include media-breakpoint-up(lg) {
+		--sTPB: #{rem(50)};
+	}
+	&__row {
+		// --bs-gutter-x: #{rem()};
+		// --bs-gutter-y: #{rem()};
+	}
+	.section-title {
+		h2 {
+			text-transform: uppercase;
+			margin-bottom: rem(30);
+		}
+		p {
+			color: $secondary;
+			font-size: rem(20);
+			max-width: 31.3em;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+	// &__col{
+
+	// }
+	// &__item{
+
+	// }
+	&__group {
+		&.active {
+			.sOptions__group-head {
+				.icon {
+					transform: rotateX(180deg);
+				}
+			}
+		}
+		.row {
+			justify-content: center;
+			--bs-gutter-x: #{rem(16)};
+			--bs-gutter-y: calc(var(--bs-gutter-x) * 0.8);
+			@include media-breakpoint-up(lg) {
+				--bs-gutter-x: #{rem(20)};
+			}
+			@include media-breakpoint-up(xl) {
+				--bs-gutter-x: #{rem(30)};
+			}
+		}
+	}
+	&__group-head {
+		position: relative;
+		text-align: center;
+		margin-bottom: rem(24);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.icon {
+			@include mt;
+			font-size: rem(26);
+			margin-left: 1rem;
+			color: $secondary;
+			@include media-breakpoint-up(md) {
+				display: none;
+			}
+		}
+		h3 {
+			display: inline-block;
+			color: $secondary;
+			font-weight: 400;
+			text-transform: uppercase;
+			margin-bottom: 0;
+		}
+	}
+	&__group-content {
+		margin-bottom: var(--sTPB);
+		@include media-breakpoint-down(md) {
+			&:not(.active) {
+				display: none;
+			}
+		}
+	}
+	// &__col {
+	// }
+	&__btn-wrap {
+		display: flex;
+		justify-content: center;
+	}
+	&__btn {
+		text-transform: uppercase;
+	}
+
+	@include media-breakpoint-up(xl) {
+	}
+	@include media-breakpoint-up(lg) {
+	}
+	@include media-breakpoint-up(md) {
+	}
+	@include media-breakpoint-up(sm) {
+	}
+	@include media-breakpoint-between(md, xl) {
+	}
+	@include media-breakpoint-only(xl) {
+	}
+	@include media-breakpoint-down(xl) {
+	}
+} // end.sOptions
+
+.check-btn {
+	display: block;
+	height: 100%;
+	&__input {
+		@extend .btn-check;
+	}
+	&__btn {
+		@extend .btn, .btn-light;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		text-transform: uppercase;
+		padding: rem(12) rem(19) rem(10) rem(19);
+		// --bs-btn-padding-x: #{rem(19)};
+		// --bs-btn-padding-y: #{rem(11)};
+
+		--bs-btn-color: #{$body-color};
+		--bs-btn-hover-color: #{$white};
+		--bs-btn-hover-bg: #{$secondary};
+		--bs-btn-hover-border-color: #{$secondary};
+		--bs-btn-active-color: #{$white};
+		--bs-btn-active-bg: #{$secondary};
+		--bs-btn-active-border-color: #{$secondary};
+		@include media-breakpoint-down(sm) {
+			font-size: rem(11);
+		}
+	}
+}
+.check-btn--colored {
+	.check-btn__btn {
+		position: relative;
+		padding-right: rem(45);
+		&::after {
+			content: "";
+			@include a-cent(y);
+			right: rem(19);
+			width: rem(15);
+			height: rem(15);
+			border: 1.5px solid $secondary;
+			border-radius: 2px;
+			background-color: var(--checkColor, #fff);
+		}
+	}
+	.check-btn__input:checked {
+		& + .check-btn__btn {
+			&::after {
+				border-color: $dark;
+			}
+		}
+	}
+}
