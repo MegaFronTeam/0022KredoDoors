@@ -221,6 +221,9 @@
 		}
 		a {
 			display: inline-block;
+			&:not(:hover) {
+				color: $white;
+			}
 		}
 	}
 	//
