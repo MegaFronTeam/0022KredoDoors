@@ -121,9 +121,15 @@
 	}
 }
 
+.breadcrumb {
+	flex-wrap: nowrap;
+}
 .breadcrumb-item{
 	width: auto;
-	margin-right: rem(32);
+	// margin-right: rem(32);
+	a {
+		color: inherit;
+	}
 }
 
 .card {
@@ -132,8 +138,12 @@
 	background-color: $gray-100;
 	border-radius: 15px;
 	position: relative;
+	height: 100%;
 	&:hover {
 		box-shadow: 0 4px 10px rgb(0 0 0 / 25%);
+		.card__link {
+			color: $primary;
+		}
 	}
 	&__img-wrap {
 		@include block(594, 442);
@@ -172,6 +182,15 @@
 		--bs-btn-active-color: #fff;
 		text-transform: uppercase;
 	}
+	&__link {
+		color: $gray-300;
+		.icon {
+			fill: none;
+			stroke: currentColor;
+			stroke-width: 2px;
+			font-size: rem(32);
+		}
+	}
 	&--solid {
 		.card {
 			&__content {
@@ -188,5 +207,79 @@
 				margin-bottom: 0;
 			}
 		}
+	}
+}
+
+.page-head {
+	--headerH: #{rem(81)};
+	padding-top: var(--headerH);
+	@include block(1920, 1125);
+	@include media-breakpoint-up(md) {
+		--headerH: #{rem(132)};
+	}
+	@include media-breakpoint-up(sm) {
+		--ratio: 725/1920;
+	}
+	@include media-breakpoint-up(md) {
+		--ratio: 325/1920;
+	}
+	@include media-breakpoint-up(lg) {
+		--headerH: #{rem(174)};
+	}
+	&__wrap {
+		position: absolute;
+		top: var(--headerH);
+		left: 0;
+		width: 100%;
+		height: calc(100% - var(--headerH));
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		.breadcrumb {
+			--bs-breadcrumb-item-padding-x: #{rem(31)};
+			--bs-breadcrumb-item-active-color: #fff;
+
+			margin-bottom: rem(22);
+			&-item {
+				position: relative;
+				color: #fff;
+				&:before {
+					content: unset;
+				}
+				&::after {
+					content: '';
+					position: absolute;
+					display: block;
+					width: 100%;
+					height: 1px;
+					background-color: rgba(255, 255, 255, 0.15);
+					right: 0;
+					bottom: 0;
+				}
+				& + .breadcrumb-item {
+					&::after {
+						width: calc(100% - var(--bs-breadcrumb-item-padding-x));
+					}
+				}
+			}
+		}
+		h1 {
+			text-transform: uppercase;
+			color: #fff;
+			margin-bottom: 0;
+		}
+	}
+}
+
+.swiper-button-hand {
+	--swiperArrowSize: #{rem(22)};
+	--swiperColorDef: #{$body-color};
+
+	border: none;
+	border-radius: 0;
+	height: rem(61);
+	box-shadow: none;
+	.icon {
+		font-size: rem(61);
 	}
 }

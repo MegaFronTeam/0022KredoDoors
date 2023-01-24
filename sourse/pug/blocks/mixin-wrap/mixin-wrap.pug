@@ -38,13 +38,15 @@ mixin search()
 			button 
 				+icon("search")
 
-mixin page-head(t,...items)
-	+b.page-head
+mixin page-head(img, t,...items)
+	+b.page-head.bg-wrap
 		- let l = items.length
-		.container
-			+breadcrumb('Главная',...items)
+		+img(`img/${img}`, 'bg').picture-bg
+		+e.wrap
+			.container
+				+breadcrumb('Главная',...items)
 
-			h1= t
+				h1= t
 
 mixin card-item(data)
 	+b.card&attributes(attributes)
@@ -53,7 +55,7 @@ mixin card-item(data)
 				+img(`img/${data.img}`, 'bg')
 		+e.content
 			+e.content-row.row
-				.col-md
+				.col
 					if data.title
 						+e.title.h5!= data.title
 					if data.text
@@ -61,3 +63,6 @@ mixin card-item(data)
 				if !data.notBtn
 					.col-md-auto
 						+e.btn.btn.btn-primary(href="#") Узнать больше
+				if data.isIcon
+					.col-auto
+						+e.link(href="#"): +icon('arrow-right')

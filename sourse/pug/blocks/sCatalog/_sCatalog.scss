@@ -1,26 +1,46 @@
 // start .sCatalog
 .sCatalog {
-	// --sPT: #{rem()};
-	// --sPB: #{rem()};
+	--sPT: #{rem(40)};
+	--sPB: #{rem(40)};
 	// --sTPB: #{rem()};
+	@include media-breakpoint-up(md) {
+		--sPT: #{rem(80)};
+		--sPB: #{rem(90)};
+	}
 	&__row{
-		// --bs-gutter-x: #{rem()};
+		--bs-gutter-x: #{rem(20)};
 		--bs-gutter-y: var(--bs-gutter-x);
+		@include media-breakpoint-up(md) {
+			--bs-gutter-x: #{rem(30)};
+		}
+	}
+	.card {
+		&:hover {
+			box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+		}
+		&__img-wrap {
+			--ratio: 386/386;
 
-	}
-	.section-title{
-		
-	}
-	&__col{
+			border-radius: 0;
+			box-shadow: none;
+		}
+		&__content {
+			padding: rem(19.5) 0;
+			width: calc(100% - rem(40));
+		}
+		&__content-row {
+			--bs-gutter-x: #{rem(16)};
 
+			align-items: center;
+		}
+		&__title {
+			margin-bottom: 0;
+			text-transform: initial;
+			@include media-breakpoint-up(lg) {
+				font-size: rem(22);
+			}
+		}
 	}
-	&__item{
-
-	}
-	&__slide{
-		height: auto;
-	}
-
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
@@ -29,25 +49,3 @@
 	@include media-breakpoint-only(xl) {}
 	@include media-breakpoint-down(xl) {}
 } // end.sCatalog
-
-
-
-.product-item{
-	display: flex;
-	flex-direction: column;
-	min-height: 100%;
-	background: #FFFFFF; 
-	border: 1px solid #E2E2E2;
-	border-radius: 15px;
-	overflow: hidden;
-	position: relative;
-	&__img-wrap{
-		@include block(298, 190);
-	}
-	&__caption{
-		flex-grow: 1;
-		display: flex;
-		flex-direction: column;
-		padding: rem(20);
-	}
-}

@@ -1,7 +1,7 @@
 
 	// start .header
 .header {
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -20,6 +20,22 @@
 		z-index: -1;
 		@include media-breakpoint-up(md) {
 			content: '';
+		}
+	}
+	&--js{
+			
+		&.fixed-animate{
+			transition: transform .4s;
+			position: fixed;
+		}
+		&.fixed{
+			transform: translateY(-100%);
+			// padding-top: .875rem;
+			// padding-top: 0;
+		}
+		&.fixed-show{
+			transform: translateY(0);
+			
 		}
 	}
 	@include media-breakpoint-up(xl) {}

@@ -1,0 +1,52 @@
+mixin sSimilarCollections(data)
+	// start sSimilarCollections
+	+b.SECTION.sSimilarCollections.section#sSimilarCollections&attributes(attributes)
+		.container
+			+b.section-title
+				h2 Похожие коллекции
+			+e.swiper-wrap
+				+e.swiper--js.swiper
+					.swiper-wrapper
+						-
+							let slideContent = [
+								{
+									img: 'card-img-16.jpg',
+									title: 'Rocca',
+									text: 'Двери с фрезеровкой'
+								},
+								{
+									img: 'card-img-17.jpg',
+									title: 'Antique',
+									text: 'Ценности вне времени'
+								},
+								{
+									img: 'card-img-18.jpg',
+									title: 'Paris',
+									text: 'Французская неоклассика'
+								},
+								{
+									img: 'card-img-19.jpg',
+									title: 'Centro',
+									text: 'Центр притяжения'
+								},
+								{
+									img: 'card-img-16.jpg',
+									title: 'Rocca',
+									text: 'Двери с фрезеровкой'
+								},
+								{
+									img: 'card-img-17.jpg',
+									title: 'Antique',
+									text: 'Ценности вне времени'
+								}
+							]
+						- for(let i = 0; i < slideContent.length; i++)
+							+e.slide.swiper-slide
+								+card-item({
+									img: slideContent[i].img,
+									title: slideContent[i].title, 
+									text: slideContent[i].text,
+									notBtn: true
+								})
+				+arrow()
+	// end sSimilarCollections
