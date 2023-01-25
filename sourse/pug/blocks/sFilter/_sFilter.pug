@@ -1,3 +1,10 @@
+mixin filterCheck(type, text, btn)
+	.sFilter__check
+		+in-c(`${type}`, `${text}`)&attributes(attributes)
+		if btn
+			button(type="button"): +icon('help')
+
+
 mixin sFilter(data)
 	// start sFilter
 	+b.sFilter&attributes(attributes) 
@@ -10,20 +17,9 @@ mixin sFilter(data)
 				+e.filterHead
 					h5 Фильтры
 					+e.BUTTON.filterCloseBtn
-						+icon('tag-close')
+						span
 						
 				+ddGroup()
-					//- .sFilter__tags
-					//- 	.row
-					//- 		mixin filterTag(t)
-					//- 			.col-auto
-					//- 				.sFilter__tag&attributes(attributes)
-					//- 					span!= t
-					//- 					button.sFilter__tagClose
-					//- 						+icon('tag-close')
-					//- 		+filterTag(`Очистить фильтры`).sFilter__tag--clear-all
-					//- 		+filterTag(`31 класс`)
-					//- 		+filterTag(`ХДФ`)
 					+e.wraper
 						+ddGroupItem('Цена, ₽', 'active')
 							.extra-controls
@@ -35,52 +31,49 @@ mixin sFilter(data)
 									input.js-input-to(type='number' value='0')
 							.range-slider
 								input.js-range-slider(type='number' value='')
-						//- +e.item
-						//- 	+e.head.form-switch
-						//- 		.h5 Товары со&nbsp;скидкой
-						//- 		label
-						//- 			input.form-check-input(type='checkbox' role='switch')
-						//- +e.item
-						//- 	+e.head.form-switch
-						//- 		.h5 Только в&nbsp;наличии
-						//- 		label
-						//- 			input.form-check-input(type='checkbox' role='switch')
-						+ddGroupItem('Цвет', 'active')
-							+in-c("checkbox", 'Белый')
-							+in-c("checkbox", 'Серый')
-							+in-c("checkbox", 'Светло-коричневый')
-							+in-c("checkbox", 'Темно-коричневый')
-							+in-c("checkbox", 'Черный')
-						+ddGroupItem('Материал', 'active')
-							+in-c("checkbox", 'Массив')
-							+in-c("checkbox", 'Грунт под покраску')
-							+in-c("checkbox", 'Шпон')
-							+in-c("checkbox", 'Ciplex')
-							+in-c("checkbox", 'Алюминий и стекло')
-							+in-c("checkbox", 'Technofoil ламинатин')
-							+in-c("checkbox", 'Алюминий и стекло')
-							+in-c("checkbox", 'Technofoil ламинатин')
-						+ddGroupItem('Остекление', 'active')
-							+in-c("radio", 'Показывать все')(checked)
-							+in-c("radio", 'Без стекла')
-							+in-c("radio", 'Со стеклом')
-						+ddGroupItem('Стиль', 'active')
-							+in-c("checkbox", 'Современный стиль')
-							+in-c("checkbox", 'Дизайн')
-							+in-c("checkbox", 'Классика')
-							+in-c("checkbox", 'Неоклассика')
-						+ddGroupItem('Коллекция', 'active')
-							+in-c("checkbox", 'Mascot')
-							+in-c("checkbox", 'Rocca')
-							+in-c("checkbox", 'Velvet')
-							+in-c("checkbox", 'Planum')
-							+in-c("checkbox", 'Planum Pro')
-							+in-c("checkbox", 'Linea')
-						+ddGroupItem('Прочее', 'active')
-							+in-c("checkbox", 'Акция')
-							+in-c("checkbox", 'Новинка')
+						
+						+ddGroupItem('Цвет')
+							// класс .check-light для темных цветов (белый чек)
+							+filterCheck('checkbox', 'Белый')(style="--checkBg: #fff")
+							+filterCheck('checkbox', 'Серый')(style="--checkBg: #DEDEDE")
+							+filterCheck('checkbox', 'Светло-коричневый')(style="--checkBg: #F2E4BA")
+							+filterCheck('checkbox', 'Темно-коричневый')(style="--checkBg: #633007").check-light
+							+filterCheck('checkbox', 'Черный')(style="--checkBg: #000000").check-light
+
+						+ddGroupItem('Материал')
+							+filterCheck('checkbox', 'Массив', 'btn')
+							+filterCheck('checkbox', 'Грунт под покраску')
+							+filterCheck('checkbox', 'Шпон', 'btn')
+							+filterCheck('checkbox', 'Ciplex', 'btn')
+							+filterCheck('checkbox', 'Алюминий и стекло')
+							+filterCheck('checkbox', 'Technofoil ламинатин', 'btn')
+							+filterCheck('checkbox', 'Алюминий и стекло')
+							+filterCheck('checkbox', 'Шпон', 'btn')
+							
+						+ddGroupItem('Остекление')
+							+filterCheck('radio', 'Показывать все')(checked)
+							+filterCheck('radio', 'Без стекла')
+							+filterCheck('radio', 'Со стеклом')
+
+						+ddGroupItem('Стиль')
+							+filterCheck('checkbox', 'Современный стиль')
+							+filterCheck('checkbox', 'Дизайн')
+							+filterCheck('checkbox', 'Классика')
+							+filterCheck('checkbox', 'Неоклассика')
+
+						+ddGroupItem('Коллекция')
+							+filterCheck('checkbox', 'Mascot')
+							+filterCheck('checkbox', 'Rocca')
+							+filterCheck('checkbox', 'Velvet')
+							+filterCheck('checkbox', 'Planum')
+							+filterCheck('checkbox', 'Planum Pro')
+							+filterCheck('checkbox', 'Linea')
+
+						+ddGroupItem('Прочее')
+							+filterCheck('checkbox', 'Акция')
+							+filterCheck('checkbox', 'Новинка')
 				+e.fixedBtns
-					+e.BUTTON.btn-showMore.btn.btn-primary Посмотреть 296 предложений
+					+e.BUTTON.btn-showMore.btn.btn-dark Посмотреть 296 предложений
 		//- +e.btn-bottom.d-lg-none
 		//- 	+icon('filter') 
 		//- 	| Фильтры

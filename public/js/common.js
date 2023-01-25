@@ -311,8 +311,8 @@ const JSCCommon = {
 			type: "double",
 			min: min,
 			max: max,
-			from: 9999,
-			to: 999999,
+			from: 99999,
+			to: 450000,
 			onStart: updateInputs,
 			onChange: updateInputs,
 			onFinish: updateInputs

@@ -14,7 +14,7 @@ mixin ddGroupItem(txt, activeClasses='')
 	+e.item(class=activeClasses)&attributes(attributes)
 		+e.head.dd-head-js
 			h5!= txt 
-			+icon('chevron-down-dd')
+			+icon('chevron-down')
 		+e.content.dd-content-js(class=activeClasses)
 			if block
 				block
