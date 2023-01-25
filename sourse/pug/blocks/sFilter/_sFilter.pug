@@ -1,0 +1,87 @@
+mixin sFilter(data)
+	// start sFilter
+	+b.sFilter&attributes(attributes) 
+		+e.btn.d-lg-none
+			span 2
+			+icon('filters') 
+			| Фильтры
+		+e.wrap
+			+e.body
+				+e.filterHead
+					h5 Фильтры
+					+e.BUTTON.filterCloseBtn
+						+icon('tag-close')
+						
+				+ddGroup()
+					//- .sFilter__tags
+					//- 	.row
+					//- 		mixin filterTag(t)
+					//- 			.col-auto
+					//- 				.sFilter__tag&attributes(attributes)
+					//- 					span!= t
+					//- 					button.sFilter__tagClose
+					//- 						+icon('tag-close')
+					//- 		+filterTag(`Очистить фильтры`).sFilter__tag--clear-all
+					//- 		+filterTag(`31 класс`)
+					//- 		+filterTag(`ХДФ`)
+					+e.wraper
+						+ddGroupItem('Цена, ₽', 'active')
+							.extra-controls
+								label
+									span от
+									input.js-input-from(type='number' value='0')
+								label
+									span до
+									input.js-input-to(type='number' value='0')
+							.range-slider
+								input.js-range-slider(type='number' value='')
+						//- +e.item
+						//- 	+e.head.form-switch
+						//- 		.h5 Товары со&nbsp;скидкой
+						//- 		label
+						//- 			input.form-check-input(type='checkbox' role='switch')
+						//- +e.item
+						//- 	+e.head.form-switch
+						//- 		.h5 Только в&nbsp;наличии
+						//- 		label
+						//- 			input.form-check-input(type='checkbox' role='switch')
+						+ddGroupItem('Цвет', 'active')
+							+in-c("checkbox", 'Белый')
+							+in-c("checkbox", 'Серый')(checked)
+							+in-c("checkbox", 'Светло-коричневый')
+							+in-c("checkbox", 'Темно-коричневый')
+							+in-c("checkbox", 'Черный')
+						+ddGroupItem('Материал', 'active')
+							+in-c("checkbox", 'Массив')(checked)
+							+in-c("checkbox", 'Грунт под покраску')
+							+in-c("checkbox", 'Шпон')
+							+in-c("checkbox", 'Ciplex')
+							+in-c("checkbox", 'Алюминий и стекло')
+							+in-c("checkbox", 'CiTechnofoil ламинатинplex')
+							+in-c("checkbox", 'Алюминий и стекло')
+							+in-c("checkbox", 'CiTechnofoil ламинатинplex')
+						+ddGroupItem('Остекление', 'active')
+							+in-c("radio", 'Показывать все')(checked)
+							+in-c("radio", 'Без стекла')
+							+in-c("radio", 'Со стеклом')
+						+ddGroupItem('Стиль', 'active')
+							+in-c("checkbox", 'Название фильтра')
+							+in-c("checkbox", 'Название фильтра')(checked)
+							+in-c("checkbox", 'Название фильтра')
+							+in-c("checkbox", 'Название фильтра')
+						+ddGroupItem('Коллекция', 'active')
+							+in-c("checkbox", 'Название фильтра')
+							+in-c("checkbox", 'Название фильтра')(checked)
+							+in-c("checkbox", 'Название фильтра')
+							+in-c("checkbox", 'Название фильтра')
+						+ddGroupItem('Прочее', 'active')
+							+in-c("checkbox", 'Название фильтра')
+							+in-c("checkbox", 'Название фильтра')(checked)
+							+in-c("checkbox", 'Название фильтра')
+							+in-c("checkbox", 'Название фильтра')
+				+e.fixedBtns
+					+e.BUTTON.btn-showMore.btn.btn-primary Посмотреть 296 предложений
+		//- +e.btn-bottom.d-lg-none
+		//- 	+icon('filter') 
+		//- 	| Фильтры
+	// end sFilter

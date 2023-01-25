@@ -1,5 +1,5 @@
 "use strict";
-const JSCCommon = { 
+const JSCCommon = {
 	modalCall() {
 		const link = '[data-fancybox="modal"], .link-modal-js';
 
@@ -23,8 +23,8 @@ const JSCCommon = {
 				PREV: "Назад",
 			},
 		});
-		document.querySelectorAll(".modal-close-js").forEach(el=>{
-			el.addEventListener("click", ()=>{
+		document.querySelectorAll(".modal-close-js").forEach(el => {
+			el.addEventListener("click", () => {
 				Fancybox.close();
 			})
 		})
@@ -33,7 +33,7 @@ const JSCCommon = {
 		});
 		document.addEventListener('click', (event) => {
 			let element = event.target.closest(link)
-			if(!element) return;
+			if (!element) return;
 			let modal = document.querySelector("#" + element.dataset.src);
 			const data = element.dataset;
 
@@ -75,7 +75,7 @@ const JSCCommon = {
 		}
 
 	},
-	mobileMenu() { 
+	mobileMenu() {
 		const menu = document.querySelector(".menu-mobile--js");
 		if (!menu) return;
 		this.toggleMenu();
@@ -149,7 +149,7 @@ const JSCCommon = {
 		// mask for input
 		let InputTel = [].slice.call(document.querySelectorAll('input[type="tel"]'));
 		InputTel.forEach(element => element.setAttribute("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}"));
-		Inputmask({"mask":"+9(999)999-99-99", showMaskOnHover: false}).mask(InputTel);
+		Inputmask({ "mask": "+9(999)999-99-99", showMaskOnHover: false }).mask(InputTel);
 	},
 	// /inputMask
 	sendForm() {
@@ -274,32 +274,92 @@ const JSCCommon = {
 		}
 	},
 	imgToSVG() {
-    const convertImages = (query, callback) => {
+		const convertImages = (query, callback) => {
 			const images = document.querySelectorAll(query);
-	
+
 			images.forEach(image => {
 				fetch(image.src)
 					.then(res => res.text())
 					.then(data => {
 						const parser = new DOMParser();
 						const svg = parser.parseFromString(data, 'image/svg+xml').querySelector('svg');
-	
+
 						if (image.id) svg.id = image.id;
 						if (image.className) svg.classList = image.classList;
-	
+
 						image.parentNode.replaceChild(svg, image);
 					})
 					.then(callback)
 					.catch(error => console.error(error))
 			});
 		};
-	
+
 		convertImages('.img-svg-js');
-  },
+	},
+	getRange() {
+		var $range = $(".js-range-slider");
+		var $inputFrom = $(".js-input-from");
+		var $inputTo = $(".js-input-to");
+		var instance;
+		var min = 0;
+		var max = 999999;
+		var from = 0;
+		var to = 0;
+
+		$range.ionRangeSlider({
+			skin: "round",
+			type: "double",
+			min: min,
+			max: max,
+			from: 9999,
+			to: 999999,
+			onStart: updateInputs,
+			onChange: updateInputs,
+			onFinish: updateInputs
+		});
+		instance = $range.data("ionRangeSlider");
+
+		function updateInputs(data) {
+			from = data.from;
+			to = data.to;
+
+			$inputFrom.prop("value", from);
+			$inputTo.prop("value", to);
+		}
+
+		$inputFrom.on("change", function () {
+			var val = $(this).prop("value");
+			// console.log(val);
+			// validate
+			if (val < min) {
+				val = min;
+			} else if (val > to) {
+				val = to;
+			}
+			instance.update({
+				from: val
+			});
+			$(this).prop("value", val);
+		});
+
+		$inputTo.on("change", function () {
+			var val = $(this).prop("value");
+			// validate
+			if (val < from) {
+				val = from;
+			} else if (val > max) {
+				val = max;
+			}
+			instance.update({
+				to: val
+			});
+			$(this).prop("value", val);
+		});
+	},
 };
 const $ = jQuery;
 
-function eventHandler() { 
+function eventHandler() {
 	JSCCommon.modalCall();
 	// JSCCommon.tabscostume('tabs');
 	JSCCommon.mobileMenu();
@@ -308,13 +368,14 @@ function eventHandler() {
 	JSCCommon.heightwindow();
 	JSCCommon.makeDDGroup();
 	JSCCommon.getCurrentYear('.currentYear');
+	JSCCommon.getRange();
 	// JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
 	// JSCCommon.animateScroll();
-	
+
 	// JSCCommon.CustomInputFile(); 
 	var x = window.location.host;
 	let screenName;
-	screenName = 'screen/'+document.body.dataset.bg;
+	screenName = 'screen/' + document.body.dataset.bg;
 	if (screenName && x.includes("localhost:30")) {
 		document.body.insertAdjacentHTML("beforeend", `<div class="pixel-perfect" style="background-image: url(${screenName});"></div>`);
 	}
@@ -374,7 +435,7 @@ function eventHandler() {
 		freeMode: true,
 		watchOverflow: true
 	});
-	
+
 	const swiper4 = new Swiper('.sBanners__slider--js', {
 		// slidesPerView: 5,
 		...defaultSl,
@@ -400,8 +461,8 @@ function eventHandler() {
 		keyboardControl: true,
 		parallax: true,
 		autoplay: {
-					delay: 5000,
-				},
+			delay: 5000,
+		},
 		navigation: {
 			nextEl: ".swiper-button-next",
 			prevEl: ".swiper-button-prev"
@@ -412,7 +473,7 @@ function eventHandler() {
 			clickable: true,
 		},
 		on: {
-			progress: function() {
+			progress: function () {
 				var swiper = this;
 				for (var i = 0; i < swiper.slides.length; i++) {
 					var slideProgress = swiper.slides[i].progress;
@@ -421,19 +482,19 @@ function eventHandler() {
 					// swiper.slides[i].querySelector(".headerBlock__img-wrap").style.transform = 
 					// "translate3d(" + innerTranslate + "px, 0, 0)";
 					swiper.slides[i].querySelector("img").style.transform = "translate3d(" + innerTranslate + "px, 0, 0)";
-				}      
+				}
 			},
-			touchStart: function(swiper) { 
+			touchStart: function (swiper) {
 				for (var i = 0; i < swiper.slides.length; i++) {
 					swiper.slides[i].style.transition = "";
-				} 
+				}
 			},
-			setTransition: function(swiper, transition) { 
+			setTransition: function (swiper, transition) {
 				for (var i = 0; i < swiper.slides.length; i++) {
 					swiper.slides[i].style.transition = transition + "ms";
 					// swiper.slides[i].querySelector(".headerBlock__img-wrap").style.transition = transition + "ms";
 					swiper.slides[i].querySelector("img").style.transition = transition + "ms";
-				} 
+				}
 			}
 		}
 	};
@@ -447,6 +508,26 @@ function eventHandler() {
 			prevEl: '.sSimilarCollections .swiper-button-prev',
 		},
 	});
+
+	$('.sFilter__filterCloseBtn').click(function () {
+		$('.sFilter__wrap').removeClass('active');
+		$('.sFilter__btn').removeClass('active');
+		document.body.classList.remove("fixed");
+	});
+
+	$(".sFilter__btn").click(function () {
+		$('.sFilter__wrap').addClass('active');
+		// $(this).toggleClass("active").next().slideToggle();
+		document.body.classList.add("fixed");
+		$(window).resize(function () {
+			if ($(window).width() > 992) {
+				$('.sFilter__wrap').removeClass('active');
+				document.body.classList.remove("fixed");
+			}
+		});
+	});
+
+
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
