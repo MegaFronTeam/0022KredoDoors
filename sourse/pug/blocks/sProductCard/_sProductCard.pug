@@ -45,7 +45,7 @@ mixin sProductCard(data)
 					mixin customInput(img, type)
 						+in-c('radio', '', type)
 							+e.img-wrap&attributes(attributes)
-								.img-wrap-center
+								span.img-wrap-center
 									if img
 										+img(`img/${img}`)
 									else
