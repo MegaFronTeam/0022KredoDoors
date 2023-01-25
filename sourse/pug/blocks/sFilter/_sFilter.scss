@@ -241,6 +241,12 @@
 		}
 		&__content {
 			padding-bottom: rem(20);
+			.sFilter__check {
+				display: none;
+				&:nth-child(-n + 6), &.is-visible {
+					display: flex;
+				}
+			}
 		}
 		&__item {
 			// &:first-child {

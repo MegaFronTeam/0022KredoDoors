@@ -356,6 +356,25 @@ const JSCCommon = {
 			$(this).prop("value", val);
 		});
 	},
+	sFilterMore: function sFilterMore() {
+		const sFilterParents = document.querySelectorAll('.dd-group__content');
+		for (const sFilterParent of sFilterParents) {
+			const sFilterLength = sFilterParent.querySelectorAll('.sFilter__check').length;
+
+			let sFilterItems = 6;
+			if (sFilterItems < sFilterLength) {
+				const buttonMore = document.createElement('button');
+				let hiddenItems = sFilterLength - sFilterItems;
+				buttonMore.textContent = 'Показать еще' + ' ' + hiddenItems;
+				buttonMore.className = 'sFilter__btn-more';
+				sFilterParent.appendChild(buttonMore);
+				buttonMore.addEventListener('click', function () {
+					$(this).siblings('.sFilter__check').toggleClass('is-visible');
+					$(this).text($(this).text() == ('Показать еще' + ' ' + hiddenItems) ? 'Свернуть' : ('Показать еще' + ' ' + hiddenItems));
+				});
+			};
+		};
+	},
 };
 const $ = jQuery;
 
@@ -369,6 +388,7 @@ function eventHandler() {
 	JSCCommon.makeDDGroup();
 	JSCCommon.getCurrentYear('.currentYear');
 	JSCCommon.getRange();
+	JSCCommon.sFilterMore();
 	// JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
 	// JSCCommon.animateScroll();
 
