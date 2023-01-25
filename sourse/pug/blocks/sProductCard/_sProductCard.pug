@@ -5,6 +5,96 @@ mixin sProductCard(data)
 			+b.section-title
 				h2.h1 Межкомнатная дверь Neo 2101. Серый шёлк
 				p Коллекция NEO&nbsp;&mdash; это актуальный и&nbsp;современный взгляд на&nbsp;классику. Простая и&nbsp;лаконичная, она гармонично сочетает традиционные формы дверей и&nbsp;минималистичные профили с&nbsp;гладкими филёнками, характерные для современного стиля. Полотна NEO могут адаптироваться практически к&nbsp;любому стилю интерьера в&nbsp;зависимости от&nbsp;выбранной модели, отделки и&nbsp;фурнитуры. Отличительные опциональные решения коллекции: &laquo;французская&raquo; решётка и&nbsp;двустороннее зеркало.
-				
 			+e.row.row
+				+e.col.col-lg
+					+e.img-wrap
+						.img-wrap-center
+							+img('img/prodCard-img-1.jpg')
+					+e.articul Артикул: 2101 СШ
+					+e.info-wrap
+						+e.info Отделка: Серый шёлк
+						+e.info Портал: NEO Гладкий наличник
+					+e.wrap
+						+e.wrap-row.row
+							.col
+								p Стоимость блока (коробка + полотно)
+							.col-auto
+								+e.price 10 599 ₽
+						+e.wrap-row.row
+							.col
+								p Стоимость обрамления (наличник + декоры)
+							.col-auto
+								+e.price 12 000 ₽
+						+e.full-price 22 299 ₽
+							span *
+						+e.post-scriptum
+							+icon('check2')
+							| Цена указана за дверной блок и обрамление портала
+					+e.footer-row.row
+						.col-auto
+							+e.btn.btn.btn-primary(href="#") добавить в корзину
+						.col-auto
+							+e.small-btn.btn.btn-light(href='#'): +icon('phone')
+						.col-auto
+							+e.small-btn.btn.btn-light(href='#'): +icon('heart')
+						.col-lg-auto
+							+e.difference
+								| * Цены в регионах могут отличаться от цен, представленных на сайте
+								+icon('help')
+				.col-lg
+					mixin customInput(img, type)
+						+in-c('radio', '', type)
+							+e.img-wrap&attributes(attributes)
+								span.img-wrap-center
+									if img
+										+img(`img/${img}`)
+									else
+										span
+					.tabs
+						.tabs__caption
+							.tabs__btn.active модель
+							.tabs__btn Материал и цвет
+							.tabs__btn Оформление портала
+						.tabs__content.active
+							+e.doors
+								.h3 Форма
+								+e.row--input
+									+customInput('custom-input-door-1.jpg', 'inp1')
+									+customInput('custom-input-door-1.jpg', 'inp1')
+									+customInput('custom-input-door-2.jpg', 'inp1')
+									+customInput('custom-input-door-1.jpg', 'inp1')
+									+customInput('custom-input-door-3.jpg', 'inp1')
+									+customInput('custom-input-door-4.jpg', 'inp1')
+									+customInput('custom-input-door-4.jpg', 'inp1')
+									+customInput('custom-input-door-5.jpg', 'inp1')
+									+customInput('custom-input-door-5.jpg', 'inp1')
+						.tabs__content
+							+e.colors
+								.h3 teknofoil ламинат
+								+e.row--colors
+									+customInput('', 'inp2')(style="--bgColor: #E5E0D7;")
+									+customInput('', 'inp2')(style="--bgColor: #C2BCB9;")
+									+customInput('', 'inp2')(style="--bgColor: #B4A794;")
+							+e.colors
+								.h3 ciplex ламинат
+								+e.row--colors
+									+customInput('', 'inp3')(style="--bgColor: #938E80;")
+									+customInput('', 'inp3')(style="--bgColor: #8F785D;")
+									+customInput('', 'inp3')(style="--bgColor: #D6D3CB;")
+									+customInput('', 'inp3')(style="--bgColor: #4E413A;")
+									+customInput('', 'inp3')(style="--bgColor: #E8E7EC;")
+									+customInput('', 'inp3')(style="--bgColor: #A2A2A2;")
+							+e.type
+								.h3 индивидуальная окраска по RAL и NCS
+								+e.row--type
+									+in-c('radio', 'RAL 7005', 'inp4')
+						.tabs__content
+							+e.portal
+								.h3 варианты оформления портала
+								+e.row--portal
+									+customInput('portal-img-1.jpg', 'inp5')
+									+customInput('portal-img-1.jpg', 'inp5')
+									+customInput('portal-img-1.jpg', 'inp5')
+									+customInput('portal-img-1.jpg', 'inp5')
+								+e.text Возможен заказ гладких наличников на компланарном коробе<br>1. Широкий гладкий наличник, ширина 100мм; 120мм или 150мм
 	// end sProductCard
