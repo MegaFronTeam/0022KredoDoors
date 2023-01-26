@@ -227,6 +227,7 @@
 				--bs-border-color: #{$primary};
 				--bs-form-check-bg-image: none;
 				background-color: transparent;
+				border-color: #{$primary};
 			}
 			&:focus {
 				border-color: #{$primary};
@@ -276,8 +277,8 @@
 			}
 			&__img-wrap {
 				@include block(60, 60);
+				margin: rem(10);
 				.img-wrap-center {
-					margin: rem(10);
 				}
 				span {
 					width: 100%;
