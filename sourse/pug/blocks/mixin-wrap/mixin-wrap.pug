@@ -98,3 +98,12 @@ mixin product-card(img, title, price, ...items)
 				+e.btn-add(href='#')
 					+icon('cart')
 
+mixin upload-field(title)
+	+b.upload-field
+		+e.title.form-wrap__input-title!=title
+		+e.wrap
+			+e.input-wrap
+				+e.LABEL.btn.btn.btn-secondary
+					input.input-upload(type='file' name='file')
+					span Выберите файл
+			+e.file-name Файл не выбран

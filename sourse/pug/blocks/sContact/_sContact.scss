@@ -181,10 +181,20 @@
 		}
 	}
 	.form-wrap {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
 		position: relative;	
 		height: 100%;
 		z-index: 1;
 		padding-top: rem(20);
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			height: 100%;
+			width: 100%;
+		}
 		@include media-breakpoint-up(lg) {
 			// max-width: rem(346);
 			// margin-left: auto;
@@ -206,12 +216,29 @@
 				height: calc(100% + var(--sPT) + var(--sPB));
 			}
 		}
+		&__input-wrap {
+			margin-bottom: rem(15);
+			width: 100%;
+		}
+		&__input-title {
+			font-size: rem(14);
+			margin-bottom: rem(10);
+			margin-left: rem(20);
+			display: inline-block;
+		}
+		&__policy {
+			margin-bottom: rem(15);
+		}
 		&__btn {
 			text-transform: uppercase;
 			padding-top: rem(15);
+			margin-top: auto;
 		}
 		textarea {
 			min-height: rem(158);
+		}
+		.upload-field {
+			margin-bottom: rem(20);
 		}
 	}
 	@include media-breakpoint-up(xl) {}
