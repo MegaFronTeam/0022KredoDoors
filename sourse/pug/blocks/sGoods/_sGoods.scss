@@ -3,7 +3,9 @@
 	// --sPT: #{rem()};
 	// --sPB: #{rem()};
 	// --sTPB: #{rem()};
-
+	@include media-breakpoint-up(md) {
+		--sPT: #{rem(50)};
+	}
 	&__row {
 		// --bs-gutter-x: #{rem()};
 		--bs-gutter-y: var(--bs-gutter-x);
@@ -160,6 +162,13 @@
 		}
 	}
 
+	.tabs-slider {
+		margin-top: calc(var(--bs-gutter-x) * 1.666);
+		.tabs__caption {
+			margin-bottom: var(--bs-gutter-x);
+		}
+	}
+
 	@include media-breakpoint-up(xl) {
 	}
 	@include media-breakpoint-up(lg) {
@@ -175,3 +184,62 @@
 	@include media-breakpoint-down(xl) {
 	}
 } // end.sGoods
+
+.tabs-slider {
+	@include media-breakpoint-down(md) {
+		font-size: rem(14);
+	}
+	.tabs__caption {
+		position: relative;
+		margin-bottom: rem(30);
+		@include media-breakpoint-down(xl) {
+			overflow: visible;
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			width: 200vw;
+			height: 1px;
+			background-color: $border-color;
+			left: -50vw;
+			bottom: 0;
+		}
+	}
+	.swiper-slide {
+		width: auto;
+		padding-bottom: rem(15);
+		margin-right: rem(32);
+	}
+	.tabs__btn {
+		color: $secondary;
+		&.active {
+			border-bottom: 1px solid $body-color;
+			color: $body-color;
+		}
+	}
+	.tabs__content {
+		&:not(.active) {
+			display: none;
+		}
+		a {
+			@include mt(0.15s);
+			position: relative;
+			color: $body-color;
+			&::after {
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: 1px;
+				left: 0;
+				bottom: 0;
+				background-color: currentColor;
+			}
+			&:hover {
+				color: $link-hover-color;
+				&::after {
+					content: none;
+				}
+			}
+		}
+	}
+}

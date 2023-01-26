@@ -471,6 +471,11 @@ function eventHandler() {
 		freeMode: true,
 		watchOverflow: true
 	});
+	const tabsSlider = new Swiper('.tabs-slider--js', {
+		slidesPerView: 'auto',
+		freeMode: true,
+		watchOverflow: true,
+	});
 
 	const swiper4 = new Swiper('.sBanners__slider--js', {
 		// slidesPerView: 5,
