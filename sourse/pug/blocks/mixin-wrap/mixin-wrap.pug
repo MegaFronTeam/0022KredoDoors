@@ -66,3 +66,13 @@ mixin card-item(data)
 				if data.isIcon
 					.col-auto
 						+e.link(href="#"): +icon('arrow-right')
+
+mixin upload-field(title)
+	+b.upload-field
+		+e.title.form-wrap__input-title!=title
+		+e.wrap
+			+e.input-wrap
+				+e.LABEL.btn.btn.btn-secondary
+					input.input-upload(type='file' name='file')
+					span Выберите файл
+			+e.file-name Файл не выбран
