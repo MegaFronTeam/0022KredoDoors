@@ -382,7 +382,7 @@ const JSCCommon = {
 			let buttonMore = sortingItem.querySelector('.sorting__btn-more');
 			buttonMore.addEventListener('click', function () {
 				$(this).siblings(`.sorting__content`).toggleClass('active');
-				$(this).text($(this).text() == 'Показать всё' ? 'Свернуть' : 'Показать всё');
+				$(this).text($(this).text() == 'Свернуть' ? 'Показать всё' : 'Свернуть');
 			});
 		}
 	}
