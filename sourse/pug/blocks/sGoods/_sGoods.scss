@@ -63,12 +63,9 @@
 	}
 	&__btn {
 		width: 100%;
-		font-size: rem(14);
-		padding-top: rem(11);
-		padding-bottom: rem(11);
-		@include media-breakpoint-up(md) {
-			font-size: rem(16);
-		}
+		padding-top: rem(15);
+		padding-bottom: rem(14);
+		text-transform: uppercase;
 		&:hover,
 		&:active {
 			@extend .btn-primary;
