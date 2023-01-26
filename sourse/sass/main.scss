@@ -1,8 +1,8 @@
 $output-bourbon-deprecation-warnings: false;
-  // @use "sass:list";
-  // @use "sass:map";
-  @use "sass:math";
-  // @use "sass:meta";
+// @use "sass:list";
+// @use "sass:map";
+@use "sass:math";
+// @use "sass:meta";
 
 // @import "mq";
 @import "bourbon/app/assets/stylesheets/bourbon";
@@ -17,13 +17,12 @@ $output-bourbon-deprecation-warnings: false;
 
 // Option B: Include parts of Bootstrap
 
-
 // v5
 
 // Layout & components
 
 @import "./node_modules/bootstrap/scss/functions";
-@import "vars"; 
+@import "vars";
 @import "./node_modules/bootstrap/scss/variables";
 @import "var-dark";
 @import "./node_modules/bootstrap/scss/variables-dark";
@@ -49,7 +48,7 @@ $output-bourbon-deprecation-warnings: false;
 // @import "./node_modules/bootstrap/scss/card";
 // @import "./node_modules/bootstrap/scss/accordion";
 @import "./node_modules/bootstrap/scss/breadcrumb";
-// @import "./node_modules/bootstrap/scss/pagination";
+@import "./node_modules/bootstrap/scss/pagination";
 // @import "./node_modules/bootstrap/scss/badge";
 // @import "./node_modules/bootstrap/scss/alert";
 // @import "./node_modules/bootstrap/scss/progress";
@@ -81,6 +80,63 @@ $output-bourbon-deprecation-warnings: false;
 }
 // @import "./node_modules/bootstrap/scss/pagination";
 
+.pagination-wrapper {
+	margin-top: var(--bs-gutter-x);
+	.pagination {
+		@include roww(15px, m);
+		justify-content: center;
+		margin-bottom: 0;
+		// .page-item {
+		//   &.active {
+		//   }
+		//   &.disabled {
+		//   }
+		// }
+		// .page-item {
+		// 	&:not(:first-child) {
+		// 		margin-left: rem(15);
+		// 	}
+		// }
+		.page-link {
+			@include mt(0.2s);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: rem(40);
+			height: rem(40);
+			border-radius: $pagination-border-radius;
+			border: none;
+			margin: 0;
+			padding-top: calc(#{rem(5)} + 5%);
+			font-weight: 500;
+			// padding-top: 4%;
+			// font-size: rem(14);
+			// @include media-breakpoint-up(md) {
+			//   font-size: rem(16);
+			//   width: rem(48);
+			//   height: rem(48);
+			// }
+
+			&.next,
+			&.prev {
+				width: rem(20);
+				padding: 0;
+				color: $gray-300;
+				background-color: transparent;
+				border: none !important;
+				border-radius: 0;
+				&:hover {
+					color: $dark;
+				}
+			}
+			.icon {
+				font-size: rem(20);
+				fill: currentColor;
+			}
+		}
+	}
+}
+
 // .pagination-wrapper ul {
 // 	@extend .pagination;
 // }
@@ -102,7 +158,7 @@ $output-bourbon-deprecation-warnings: false;
 @import "root";
 @import "base";
 
-@import '../pug/blocks/**/*.scss';
+@import "../pug/blocks/**/*.scss";
 // @import '../pug/blocks/form-wrap/form-wrap.scss';
 
 // @import '../pug/blocks/topLine/_topLine.scss';
@@ -117,4 +173,3 @@ $output-bourbon-deprecation-warnings: false;
 // @import '../pug/blocks/footer/_footer.scss';
 
 @import "media"; // Всегда в конце
-
