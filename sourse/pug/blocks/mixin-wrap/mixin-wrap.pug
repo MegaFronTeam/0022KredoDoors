@@ -18,6 +18,8 @@ mixin arrow()
 		+icon('chevron-right')
 //- /arrow for swiper-slider
 
+//- /arrow for swiper-slider
+
 mixin ie11()
 	//- modernizer and for ie11
 
@@ -85,7 +87,10 @@ mixin product-card(img, title, price, ...items)
 							+e.img-wrap(href='#')
 								.img-wrap-center
 									+img(`img/product-${img}.jpg`, 'bg')
-				+arrow()
+				.swiper-button-hand.swiper-button-hand-prev.swiper-button-prev
+					+icon('chevron-left-sm')
+				.swiper-button-hand.swiper-button-hand-next.swiper-button-next
+					+icon('chevron-right-sm')
 			.swiper-pagination
 		+e.caption
 			+e.title(href="#")!= title

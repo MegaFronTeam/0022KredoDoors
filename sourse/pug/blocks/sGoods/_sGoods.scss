@@ -3,6 +3,7 @@
 	// --sPT: #{rem()};
 	// --sPB: #{rem()};
 	// --sTPB: #{rem()};
+
 	&__row {
 		// --bs-gutter-x: #{rem()};
 		--bs-gutter-y: var(--bs-gutter-x);
@@ -55,7 +56,6 @@
 		margin-left: auto;
 		margin-right: auto;
 		margin-top: calc(var(--bs-gutter-x) * 1.666);
-		
 	}
 	&__btn {
 		width: 100%;
@@ -69,7 +69,9 @@
 	}
 
 	.sorting {
-		margin-bottom: calc(var(--bs-gutter-x) * 1.666);
+		@include media-breakpoint-up(xl) {
+			margin-bottom: calc(var(--bs-gutter-x) * 0.666);
+		}
 		&__row {
 			--bs-gutter-x: #{rem(15)};
 			--bs-gutter-y: var(--bs-gutter-x);
@@ -95,14 +97,15 @@
 			border: none !important;
 			background-color: transparent;
 			padding-right: rem(17);
-			&:hover, &:active {
+			&:hover,
+			&:active {
 				color: $body-color;
 				&::after {
 					max-width: calc(100% - #{rem(17)});
 				}
 			}
 			&::before {
-				content: '';
+				content: "";
 				position: absolute;
 				width: 110%;
 				height: 140%;
@@ -111,7 +114,7 @@
 				// z-index: -1;
 			}
 			&::after {
-				content: '';
+				content: "";
 				@include mt(0.2s);
 				position: absolute;
 				width: 100%;
@@ -131,8 +134,9 @@
 				width: rem(7);
 				height: rem(7);
 				right: rem(3);
-				&::before, &::after {
-					content: '';
+				&::before,
+				&::after {
+					content: "";
 					@include a-cent;
 					position: absolute;
 					background-color: currentColor;

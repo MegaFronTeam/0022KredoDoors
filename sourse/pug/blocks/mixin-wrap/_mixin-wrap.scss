@@ -285,6 +285,10 @@
 	flex-direction: column;
 	&:hover {
 		box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+		.swiper-pagination,
+		.swiper-button-hand {
+			opacity: 1;
+		}
 	}
 	&__img-wrap {
 		@include block(242, 242);
@@ -340,64 +344,89 @@
 	.slider-wrapper {
 		margin-bottom: rem(22);
 		position: relative;
+	}
+	@media (hover: hover) {
+		.swiper-button-hand {
+			opacity: 0;
+		}
+	}
+	.swiper-button-hand {
+		height: 100%;
+		--swiperArrowSize: #{rem(24)};
+		--swiperArrowPosition: 0;
+		--swiperBorderColorDef: transparent;
+		--swiperColorDef: var(--bs-border-color);
+		--swiperBgDef: transparent;
+
+		--swiperBorderColorDefHover: transparent;
+		--swiperColorDefHover: var(--bs-body);
+		--swiperBgDefHover: transparent;
+		.icon {
+			font-size: rem(24);
+		}
+	}
+	@media (hover: hover) {
 		.swiper-pagination {
-			position: absolute;
-			right: 0;
-			top: calc(100% + 10px);
-			left: 0;
-			z-index: 5;
-			display: flex;
-			justify-content: center;
-			// padding-top: 20px;
-			.swiper-pagination-bullet {
-				position: relative;
-				border-radius: rem(5);
-				width: 100%;
-				height: 2px;
-				transition-property: opacity, max-width;
-				transition-duration: 0.3s;
-				flex: 1 1 auto;
-				max-width: rem(16);
-				margin: 0 4px;
-				background-color: $border-color;
-				// cursor: pointer;
-				&:hover {
-					&::after {
-						transform: scaleY(1);
-					}
-				}
-				&::before {
-					content: "";
-					display: block;
-					position: absolute;
-					top: rem(-10);
-					right: rem(-4);
-					bottom: rem(-10);
-					left: rem(-4);
-				}
+			opacity: 0;
+		}
+	}
+	.swiper-pagination {
+		position: absolute;
+		right: 0;
+		top: calc(100% + 10px);
+		left: 0;
+		z-index: 5;
+		display: flex;
+		justify-content: center;
+		// padding-top: 20px;
+		.swiper-pagination-bullet {
+			position: relative;
+			border-radius: rem(5);
+			width: 100%;
+			height: 2px;
+			transition-property: opacity, max-width;
+			transition-duration: 0.3s;
+			flex: 1 1 auto;
+			max-width: rem(16);
+			margin: 0 4px;
+			background-color: $border-color;
+			// cursor: pointer;
+			&:hover {
 				&::after {
-					content: "";
-					display: block;
-					position: absolute;
-					top: -2px;
-					right: 0;
-					bottom: -2px;
-					left: 0;
-					background-color: $border-color;
-					border-radius: rem(10);
-					transform: scaleY(0.33);
-					transition: transform 0.2s;
+					transform: scaleY(1);
 				}
 			}
-			.swiper-pagination-bullet-active {
-				background-color: #3c3c3b;
-				flex-grow: 2;
-				max-width: rem(32);
-				cursor: default;
-				pointer-events: none;
-				&::after {
-					opacity: 0;
-				}
+			&::before {
+				content: "";
+				display: block;
+				position: absolute;
+				top: rem(-10);
+				right: rem(-4);
+				bottom: rem(-10);
+				left: rem(-4);
+			}
+			&::after {
+				content: "";
+				display: block;
+				position: absolute;
+				top: -2px;
+				right: 0;
+				bottom: -2px;
+				left: 0;
+				background-color: $border-color;
+				border-radius: rem(10);
+				transform: scaleY(0.33);
+				transition: transform 0.2s;
+			}
+		}
+		.swiper-pagination-bullet-active {
+			background-color: #3c3c3b;
+			flex-grow: 2;
+			max-width: rem(32);
+			cursor: default;
+			pointer-events: none;
+			&::after {
+				opacity: 0;
 			}
 		}
 	}
@@ -481,7 +510,7 @@
 		// 	flex-direction: column;
 		// 	align-items: flex-start;
 		// }
-		@include media-breakpoint-only(lg)
+		@include media-breakpoint-only(lg);
 	}
 	&__btn {
 		--bs-btn-color: #fff;
