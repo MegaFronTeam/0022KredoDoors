@@ -143,10 +143,19 @@
 		color: $gray-600;
 		position: relative;
 		max-width: rem(224);
+	}
+	&__difference-link {
+		background-color: transparent;
+		border: none;
+		position: absolute;
+		top: 0;
+		left: calc(100% + 3px);
+		padding: 0;
+		color: $gray-600;
+		&:hover {
+			color: $body-color;
+		}
 		.icon {
-			position: absolute;
-			top: 0;
-			left: calc(100% + 3px);
 			font-size: rem(20);
 			fill: none;
 			stroke: currentColor;

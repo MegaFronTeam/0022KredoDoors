@@ -1,9 +1,80 @@
 mixin sContact()
 	// start sContact
-	+b.SECTION.sContact.section#sContact&attributes(attributes)
+	+b.sContact.section#sContact&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sContact
-				
-			+e.row.row
+			.row
+				.col-lg-8
+					mixin item(title)
+						+e.item
+							+e.title!= title
+							block
+					.row
+						.col-md-6
+							+e.wrap
+								+item('Отправить заявку')
+									p Можете оставить заявку по телефонам:
+									+e.UL.default-list
+										li
+											a(href="tel:+74952482017") +7 (495) 248-20-17 
+											| (многоканальный)
+										li 
+											a(href="tel:+78043331068") +7 (804) 333-10-68 
+											| (бесплатно по РФ)
+								+item('Связаться с нами в WhatsApp')
+									+e.UL.whatsapp-list
+										li 
+											+icon('whatsapp')
+											a(href="tel:+79993335208") +7 999 333-52-08 -
+											| Легенько Лилия
+										li 
+											+icon('whatsapp')
+											a(href="tel:+79993335092") +7 999 333-50-92 -
+											| Федорова Юлия
+										li 
+											+icon('whatsapp')
+											a(href="tel:+79993334983") +7 999 333-49-83 -
+											| Кириллова Ирина
+										li 
+											+icon('whatsapp')
+											a(href="tel:+79993335246") +7 999 333-52-46 -
+											| Смирнова Дарья
+										li 
+											+icon('whatsapp')
+											a(href="tel:+79993335261") +7 999 333-52-61 -
+											| Макурин Александр
+						.col-md-6
+							+item('контакты')
+								h5 ООО "ФАБРИКА ДВЕРИ-КРЕДО"
+								+e.info-title Производство и склад:
+								+e.UL.info-list
+									li 
+										+icon('house')
+										| РФ, 142100, г. Подольск<br>ул. Комсомольская, д.1 ст.22
+									li
+										+icon('mail')
+										a(href="mailto:sales@dveri-kredo.ru") sales@dveri-kredo.ru
+									li
+										+icon('phone')
+										a(href="tel:88043331068") 8 (804) 333-10-68
+									li
+										+icon('phone')
+										a(href="tel:+74952482017") +7 (495) 248-20-17
+									li
+										+icon('globe')
+										a(href="#") Схема проезда
+							+item('время работы')
+								+e.UL.default-list
+									li Пн- Пт: с 10:00 до 18:00
+									li Сб, Вс: выходной
+					+e.text 
+						p По&nbsp;вопросам трудоустройства обращайтесь по&nbsp;контактным телефонам, подробнее в&nbsp;разделе 
+							a(href="#") Вакансии 
+						p Или отправьте заявку из&nbsp;формы обратной связи и&nbsp;наши менеджеры перезвонят вам в&nbsp;ближайшее время.
+				.col-lg-4
+					+form-wrap()
+						+input('', 'text', 'Фамилия Имя Отчество *:')
+						+input('', 'email', 'E-mail *:')
+						+input('', 'textarea', 'Сообщение:')
+						+policy('Я согласен на обработку персональных данных')
+						+e.btn.btn.btn-primary(type='button') отправить сообщение
 	// end sContact
