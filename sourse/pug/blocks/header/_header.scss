@@ -38,6 +38,39 @@
 			
 		}
 	}
+	&--light {
+		background-color: #fff;
+		&::before {
+			background-color: $gray-300;
+		}
+		.top-nav {
+			&__menu-wrap {
+				p {
+					color: $gray-900;
+				}
+			}
+			&__link {
+				.icon {
+					color: $gray-900;
+				}
+			}
+			&__lang {
+				color: $gray-300;
+				&.active {
+					color: $gray-900;
+				}
+			}
+			&__contact {
+				color: $gray-900;
+			}
+			&__search {
+				color: $gray-900;
+			}
+			.toggle-menu-mobile {
+				--color: #{$gray-900};
+			}
+		}
+	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
