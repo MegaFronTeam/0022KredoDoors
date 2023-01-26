@@ -27,9 +27,12 @@ mixin ie11()
 
 mixin addblock()
 	+b.addBlock
-		+e.btn--minus(type="button")
 		input(type="text" value="1")
-		+e.btn--plus(type="button")
+		+e.btn-wrap
+			+e.btn--plus(type="button")
+				+icon('increase')
+			+e.btn--minus(type="button")
+				+icon('decrease')
 
 
 
@@ -43,10 +46,12 @@ mixin search()
 mixin page-head(img, t,...items)
 	+b.page-head.bg-wrap
 		- let l = items.length
-		+img(`img/${img}`, 'bg').picture-bg
+		if img
+			+img(`img/${img}`, 'bg').picture-bg
 		+e.wrap
 			.container
-				+breadcrumb('Главная',...items)
+				if l > 0
+					+breadcrumb('Главная',...items)
 
 				h1= t
 

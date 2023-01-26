@@ -46,9 +46,13 @@
 	color: var(--color, #{$primary});
 	border: 1px solid;
 	border-radius: 23px;
-	display: flex;
 	position: relative;
 	overflow: hidden;
+	display: flex;
+	&__btn-wrap {
+		display: flex;
+		flex-direction: column;
+	}
 	input {
 		color: inherit;
 		text-align: center;
@@ -56,6 +60,7 @@
 		height: rem(45);
 	}
 	&__btn {
+		flex-shrink: 0;
 		color: inherit;
 		height: rem(45);
 		position: relative;
@@ -68,18 +73,18 @@
 		// padding-left: rem(8);
 		// padding-right: rem(8);
 		width: rem(26);
-		&::before,
-		&::after {
-			content: "";
-			width: 10px;
-			height: 2px;
-			background-color: currentColor;
-			@include a-cent;
-			position: absolute;
-		}
-		&--plus::after {
-			transform: rotate(90deg);
-		}
+		// &::before,
+		// &::after {
+		// 	content: "";
+		// 	width: 10px;
+		// 	height: 2px;
+		// 	background-color: currentColor;
+		// 	@include a-cent;
+		// 	position: absolute;
+		// }
+		// &--plus::after {
+		// 	transform: rotate(90deg);
+		// }
 	}
 }
 

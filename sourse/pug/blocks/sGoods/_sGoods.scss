@@ -192,6 +192,7 @@
 	.tabs__caption {
 		position: relative;
 		margin-bottom: rem(30);
+		margin-right: rem(-32);
 		@include media-breakpoint-down(xl) {
 			overflow: visible;
 		}
@@ -203,6 +204,10 @@
 			background-color: $border-color;
 			left: -50vw;
 			bottom: 0;
+			@include media-breakpoint-up(xl) {
+				width: calc(100% - rem(32));
+				left: 0;
+			}
 		}
 	}
 	.swiper-slide {
