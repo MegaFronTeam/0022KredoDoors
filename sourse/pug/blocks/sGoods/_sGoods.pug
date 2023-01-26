@@ -6,24 +6,25 @@ mixin sGoods(data)
 				mixin sortingItem(t)
 					.col-auto
 						+e.btn(href="#")&attributes(attributes)!= t
-				+e.row.row
-					+sortingItem(`Все двери`).active
-					+sortingItem(`Белые двери`)
-					+sortingItem(`Серые двери`)
-					+sortingItem(`Двери из&nbsp;массива`)
-					+sortingItem(`Массив со&nbsp;стеклом`)
-					+sortingItem(`Массив классический`)
-					+sortingItem(`Межкомнатные двери из&nbsp;массива дуба`)
-					+sortingItem(`Шпонированный дуб`)
-					+sortingItem(`Двери со стеклом`)
-					+sortingItem(`Черные двери`)
-					+sortingItem(`Антрацит`)
-					+sortingItem(`Белая эмаль`)
-					+sortingItem(`Двери из&nbsp;массива`)
-					+sortingItem(`Массив со&nbsp;стеклом`)
-					+sortingItem(`Массив классический`)
-					+sortingItem(`Межкомнатные двери из&nbsp;массива дуба`)
-					+sortingItem(`Шпонированный дуб`)
+				+e.content
+					+e.row.row
+						+sortingItem(`Все двери`).active
+						+sortingItem(`Белые двери`)
+						+sortingItem(`Серые двери`)
+						+sortingItem(`Двери из&nbsp;массива`)
+						+sortingItem(`Массив со&nbsp;стеклом`)
+						+sortingItem(`Массив классический`)
+						+sortingItem(`Межкомнатные двери из&nbsp;массива дуба`)
+						+sortingItem(`Шпонированный дуб`)
+						+sortingItem(`Двери со стеклом`)
+						+sortingItem(`Черные двери`)
+						+sortingItem(`Антрацит`)
+						+sortingItem(`Белая эмаль`)
+						+sortingItem(`Двери из&nbsp;массива`)
+						+sortingItem(`Массив со&nbsp;стеклом`)
+						+sortingItem(`Массив классический`)
+						+sortingItem(`Межкомнатные двери из&nbsp;массива дуба`)
+						+sortingItem(`Шпонированный дуб`)
 				+e.BUTTON.btn-more Показать все
 					span 
 
@@ -36,7 +37,7 @@ mixin sGoods(data)
 						+e.filtered Найдено 145 товаров
 					block
 					+e.footer
-						+e.btn(href="#").btn.btn-light Загрузить ещё
+						+e.btn(href="#").btn.btn-dark показать ещё
 						//- +pagin-sm().d-sm-none
 						//- +pagin-lg().d-none.d-sm-block
 						// end sGoods
