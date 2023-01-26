@@ -43,48 +43,55 @@
 }
 
 .addBlock {
-	color: var(--color, #{$primary});
-	border: 1px solid;
-	border-radius: 23px;
+	color: var(--color, #{$dark});
+	border-radius: rem(30);
 	position: relative;
 	overflow: hidden;
 	display: flex;
+	background-color: $light;
+	max-width: rem(100);
+	padding-right: rem(20);
+	justify-content: space-between;
 	&__btn-wrap {
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
 	}
 	input {
 		color: inherit;
 		text-align: center;
 		border: none;
-		height: rem(45);
+		outline: none !important;
+		height: rem(44);
+		background-color: $light;
+		width: 100%;
+		border-radius: rem(30) 0 0 rem(30);
+		padding: rem(10) rem(10) rem(10) rem(20);
+		text-align: center;
+		font-size: rem(14);
+		font-weight: 500;
 	}
 	&__btn {
-		flex-shrink: 0;
 		color: inherit;
-		height: rem(45);
+		width: rem(20);
+		height: rem(20);
 		position: relative;
-		border-radius: 23px;
-		background: none !important;
+		padding: 0;
+		// background: none !important;
 		border: none !important;
 		box-shadow: none !important;
 		outline: none !important;
 		background: transparent;
-		// padding-left: rem(8);
-		// padding-right: rem(8);
-		width: rem(26);
-		// &::before,
-		// &::after {
-		// 	content: "";
-		// 	width: 10px;
-		// 	height: 2px;
-		// 	background-color: currentColor;
-		// 	@include a-cent;
-		// 	position: absolute;
-		// }
-		// &--plus::after {
-		// 	transform: rotate(90deg);
-		// }
+		&:hover {
+			.icon {
+				transform: scale(1.4);
+			}
+		}
+		.icon {
+			@include mt(0.2s);
+			@include a-cent;
+			font-size: rem(20);
+		}
 	}
 }
 

@@ -543,6 +543,26 @@ iframe {
 		}
 	}
 }
+.shopping-cart-page {
+	.page-head {
+		--headerH: #{rem(110)};
+		@include media-breakpoint-up(md) {
+		--headerH: #{rem(180)};
+		}
+		@include media-breakpoint-up(lg) {
+			--headerH: #{rem(195)};
+		}
+		&::before {
+			content: none;
+		}
+		h1 {
+			color: $body-color;
+		}
+		&__wrap {
+			position: static;
+		}
+	}
+}
 
 .asideCol {
 	@include media-breakpoint-between(lg, xxl) {
