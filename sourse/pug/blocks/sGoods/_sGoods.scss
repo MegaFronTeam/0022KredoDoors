@@ -154,6 +154,13 @@
 				}
 			}
 		}
+		&__content {
+			max-height: rem(90);
+			overflow: hidden;
+			&.active {
+				max-height: 100%;
+			}
+		}
 	}
 
 	@include media-breakpoint-up(xl) {

@@ -1,6 +1,5 @@
 // start .sFilter
 @include media-breakpoint-down(lg) {
-	
 	.sFilter__wrap {
 		// display: none;
 		position: fixed;
@@ -31,9 +30,9 @@
 			padding-left: rem(24);
 			padding-right: rem(24);
 			padding-bottom: calc(env(safe-area-inset-bottom) + #{rem(80)});
-			&__content{
-				&:not(.active){
-					display:none;
+			&__content {
+				&:not(.active) {
+					display: none;
 				}
 			}
 		}
@@ -88,13 +87,21 @@
 			padding: 2px 3px 0 3px;
 		}
 		.icon {
-			
 			margin-right: rem(8);
 			font-size: rem(24);
 		}
 		&:hover {
 			@extend .btn-primary;
 		}
+	}
+
+	&__btn-more {
+		font-size: rem(14);
+		color: $secondary;
+		padding: 0;
+		background-color: transparent;
+		border: none;
+		padding-top: rem(5);
 	}
 
 	&__title {
@@ -243,11 +250,12 @@
 			padding-bottom: rem(20);
 			.sFilter__check {
 				display: none;
-				&:nth-child(-n + 6), &.is-visible {
+				&.is-visible {
 					display: flex;
 				}
 			}
 		}
+		// &:nth-child(-n + 6)
 		&__item {
 			// &:first-child {
 			// 	.dd-group__head {

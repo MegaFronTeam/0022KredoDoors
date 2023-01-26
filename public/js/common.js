@@ -359,22 +359,34 @@ const JSCCommon = {
 	sFilterMore: function sFilterMore() {
 		const sFilterParents = document.querySelectorAll('.dd-group__content');
 		for (const sFilterParent of sFilterParents) {
-			const sFilterLength = sFilterParent.querySelectorAll('.sFilter__check').length;
-
-			let sFilterItems = 6;
-			if (sFilterItems < sFilterLength) {
+			let sFilterShownItems = 6;
+			const sFilterItemsLength = sFilterParent.querySelectorAll('.sFilter__check').length;
+			$(`.sFilter__check:nth-child(-n + ${sFilterShownItems})`).addClass('is-visible')
+			if (sFilterShownItems < sFilterItemsLength) {
 				const buttonMore = document.createElement('button');
-				let hiddenItems = sFilterLength - sFilterItems;
-				buttonMore.textContent = 'Показать еще' + ' ' + hiddenItems;
+				let hiddenItems = sFilterItemsLength - sFilterShownItems;
+				let btnContent = 'Показать еще' + ' ' + hiddenItems;
+				buttonMore.textContent = btnContent;
 				buttonMore.className = 'sFilter__btn-more';
 				sFilterParent.appendChild(buttonMore);
 				buttonMore.addEventListener('click', function () {
-					$(this).siblings('.sFilter__check').toggleClass('is-visible');
-					$(this).text($(this).text() == ('Показать еще' + ' ' + hiddenItems) ? 'Свернуть' : ('Показать еще' + ' ' + hiddenItems));
+					$(this).siblings(`.sFilter__check:not(:nth-child(-n + ${sFilterShownItems}))`).toggleClass('is-visible');
+					$(this).text($(this).text() == btnContent ? 'Свернуть' : btnContent);
 				});
 			};
 		};
 	},
+	sortingMore: function sortingMore() {
+		const sortingItems = document.querySelectorAll('.sorting');
+		for (const sortingItem of sortingItems) {
+			let buttonMore = sortingItem.querySelector('.sorting__btn-more');
+			buttonMore.addEventListener('click', function () {
+				$(this).siblings(`.sorting__content`).toggleClass('active');
+				$(this).text($(this).text() == 'Показать всё' ? 'Свернуть' : 'Показать всё');
+			});
+		}
+	}
+
 };
 const $ = jQuery;
 
@@ -389,6 +401,7 @@ function eventHandler() {
 	JSCCommon.getCurrentYear('.currentYear');
 	JSCCommon.getRange();
 	JSCCommon.sFilterMore();
+	JSCCommon.sortingMore();
 	// JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
 	// JSCCommon.animateScroll();
 
@@ -428,6 +441,9 @@ function eventHandler() {
 	});
 
 	whenResize();
+
+
+
 
 	let defaultSl = {
 		spaceBetween: 0,
