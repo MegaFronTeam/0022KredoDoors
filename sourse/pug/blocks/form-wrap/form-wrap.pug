@@ -73,7 +73,7 @@ mixin add-file(n)
 		+e.SPAN.filename 
 
 
-mixin policy()
+mixin policy(text=' Согласен на обработку и хранение моих персональных данных в соответствии с условиями')
 	+e.policy
 		+in-c()(checked)
-			+e.SMALL.text.text-secondary Согласен на обработку и хранение моих персональных данных в соответствии с условиями
+			+e.SMALL.text.text-secondary!= text

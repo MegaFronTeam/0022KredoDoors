@@ -40,7 +40,8 @@ mixin sProductCard(data)
 						.col-lg-auto
 							+e.difference
 								| * Цены в регионах могут отличаться от цен, представленных на сайте
-								+icon('help')
+								+e.difference-link(href="#") 
+									+icon('help')
 				.col-lg
 					mixin customInput(img, type)
 						+in-c('radio', '', type)
