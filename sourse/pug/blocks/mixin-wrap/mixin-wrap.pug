@@ -20,7 +20,7 @@ mixin arrow()
 
 mixin ie11()
 	//- modernizer and for ie11
-	 
+
 	<!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
 
 mixin addblock()
@@ -66,3 +66,35 @@ mixin card-item(data)
 				if data.isIcon
 					.col-auto
 						+e.link(href="#"): +icon('arrow-right')
+
+
+mixin product-card(img, title, price, ...items)
+	// start product-card
+	+b.product-card
+		+e.head
+			+e.tags 
+				span Новинка
+			// активное состояние - .active
+			+e.btn-like(href='#')
+				+icon('heart')
+		.slider-wrapper
+			+e.slider--js.swiper
+				.swiper-wrapper
+					- for (var x = 1; x < 6; x++)
+						+e.slide.swiper-slide
+							+e.img-wrap(href='#')
+								.img-wrap-center
+									+img(`img/product-${img}.jpg`, 'bg')
+				+arrow()
+			.swiper-pagination
+		+e.caption
+			+e.title(href="#")!= title
+			ul
+				each item in items
+					li!= item
+			+e.price
+				span!= price
+				// активное состояние - .active
+				+e.btn-add(href='#')
+					+icon('cart')
+

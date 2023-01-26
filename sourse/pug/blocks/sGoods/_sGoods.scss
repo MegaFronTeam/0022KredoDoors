@@ -5,7 +5,8 @@
 	// --sTPB: #{rem()};
 	&__row {
 		// --bs-gutter-x: #{rem()};
-		// --bs-gutter-y: #{rem()};
+		--bs-gutter-y: var(--bs-gutter-x);
+		margin-top: 0;
 	}
 	.section-title {
 	}
@@ -53,13 +54,8 @@
 		max-width: rem(950);
 		margin-left: auto;
 		margin-right: auto;
-		margin-top: calc(var(--bs-gutter-x) * 1.5);
-		@include media-breakpoint-up(md) {
-			margin-top: var(--bs-gutter-x);
-		}
-		@include media-breakpoint-up(xxl) {
-			margin-top: rem(32);
-		}
+		margin-top: calc(var(--bs-gutter-x) * 1.666);
+		
 	}
 	&__btn {
 		width: 100%;
@@ -73,7 +69,7 @@
 	}
 
 	.sorting {
-		margin-bottom: rem(50);
+		margin-bottom: calc(var(--bs-gutter-x) * 1.666);
 		&__row {
 			--bs-gutter-x: #{rem(15)};
 			--bs-gutter-y: var(--bs-gutter-x);

@@ -484,6 +484,32 @@ function eventHandler() {
 
 	});
 
+	const productCards = document.querySelectorAll('.product-card');
+	for (const productCard of productCards) {
+		const productCardSlider = new Swiper(productCard.querySelector('.product-card__slider--js'), {
+			slidesPerView: 'auto',
+			loopFillGroupWithBlank: true,
+			lazy: {
+				loadPrevNext: true,
+			},
+			watchOverflow: true,
+			spaceBetween: 4,
+			loop: true,
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+			pagination: {
+				el: productCard.querySelector('.swiper-pagination'),
+				type: 'bullets',
+				clickable: true,
+				// renderBullet: function (index, className) {
+				// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
+				// }
+			},
+		});
+	};
+
 	// modal window
 
 	var interleaveOffset = 0.5;

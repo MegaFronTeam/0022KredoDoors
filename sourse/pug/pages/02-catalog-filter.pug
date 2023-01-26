@@ -23,16 +23,36 @@ block title
 	title= title
 block pagecontent
 	+mob-mnu()
-	
-	
+
+
 	+header()
 		+top-nav()
 		//- +topLine
 	main 
 		+page-head('page-head-bg-1.jpg', 'Двери', 'Двери')
 		+sGoods()
+			+e.row.row
+				- const wrapClass="col-sm-6 col-xl-4"
+				+e.col(class= wrapClass)
+					+product-card(1, `Neo`, `24&nbsp;299&nbsp;₽`, `Модель: 2101`,`Отделка: Серый шёлк`,`Материал: Ciplex ламинатин`,)
+				+e.col(class= wrapClass)
+					+product-card(1, `Rocca`, `49&nbsp;499&nbsp;₽`, `Модель: 8331`,`Отделка: Матовый белоснежный`,`Материал: Гладкая эмаль`,)
+				+e.col(class= wrapClass)
+					+product-card(1, `Planum`, `26&nbsp;299&nbsp;₽`, `Модель: 2101`,`Отделка: Серый шёлк`,`Материал: Ciplex ламинатин`, `Стекло: Сатинированное стекло`)
+				+e.col(class= wrapClass)
+					+product-card(1, `Rocca`, `49&nbsp;499&nbsp;₽`, `Модель: 8331`,`Отделка: Матовый белоснежный`,`Материал: Гладкая эмаль`,)
+				+e.col(class= wrapClass)
+					+product-card(1, `Planum`, `26&nbsp;299&nbsp;₽`, `Модель: 2101`,`Отделка: Серый шёлк`,`Материал: Ciplex ламинатин`, `Стекло: Сатинированное стекло`)
+				+e.col(class= wrapClass)
+					+product-card(1, `Neo`, `24&nbsp;299&nbsp;₽`, `Модель: 2101`,`Отделка: Серый шёлк`,`Материал: Ciplex ламинатин`,)
+				+e.col(class= wrapClass)
+					+product-card(1, `Neo`, `24&nbsp;299&nbsp;₽`, `Модель: 2101`,`Отделка: Серый шёлк`,`Материал: Ciplex ламинатин`,)
+				+e.col(class= wrapClass)
+					+product-card(1, `Planum`, `26&nbsp;299&nbsp;₽`, `Модель: 2101`,`Отделка: Серый шёлк`,`Материал: Ciplex ламинатин`, `Стекло: Сатинированное стекло`)
+				+e.col(class= wrapClass)
+					+product-card(1, `Rocca`, `49&nbsp;499&nbsp;₽`, `Модель: 8331`,`Отделка: Матовый белоснежный`,`Материал: Гладкая эмаль`,)
 	+footer()
-      
+
 
 
 

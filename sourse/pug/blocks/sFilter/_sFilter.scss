@@ -55,11 +55,12 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		padding-top: rem(15);
-		padding-bottom: rem(14);
+		padding-top: rem(12);
+		padding-bottom: rem(10);
 		padding-right: rem(50);
 		padding-left: rem(50);
 		text-transform: uppercase;
+		// margin-bottom: rem(20);
 		// margin-top: rem(22);
 		// height: 40px;
 		&:hover {
@@ -490,8 +491,8 @@
 		}
 	}
 	&__btn-showMore {
-		padding-top: rem(10);
-		padding-bottom: rem(9);
+		padding-top: rem(12);
+		padding-bottom: rem(10);
 		width: 100%;
 		text-transform: uppercase;
 		margin-bottom: rem(12);
