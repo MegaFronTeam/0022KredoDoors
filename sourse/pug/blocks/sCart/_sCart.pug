@@ -1,9 +1,36 @@
 mixin sCart(data)
 	// start sCart
-	+b.SECTION.sCart.section#sCart&attributes(attributes)
+	+b.sCart.section#sCart&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sCart
-			+addblock()
-			
+			table
+				thead
+					tr
+						th
+						th Название товара
+						th Количество
+						th(colspan = "2") Сумма
+				tbody
+					mixin tr
+						tr
+							td
+								+e.img-wrap
+									.img-wrap-center
+										+img('img/sCart-1.jpg')
+							td
+								+e.title
+									span Neo
+									span 2101 СШ
+								ul
+									li Отделка: Серый шёлк
+									li Материал: Ciplex ламинатин
+									li Портал: NEO Гладкий наличник
+							td
+								+addblock()
+							td(colspan = "2")
+								+e.price-wrap
+									.h5 240&nbsp;299&nbsp;₽
+									a(href="#") Удалить из&nbsp;корзины
+					+tr
+					+tr
+					+tr
 	// end sCart
