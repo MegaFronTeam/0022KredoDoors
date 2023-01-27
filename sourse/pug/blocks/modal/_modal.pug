@@ -6,12 +6,20 @@ mixin modal()
 		+b.modal-win
 			+form-wrap
 				.text-center
-					+e.title.form-data.h3.ttu Обратный звонок
-					p.after-headline Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течение 15&nbsp;минут
-
-				+input("Ваше Имя")(required)  
-				+e.BUTTON.btn.btn(type="submit"  )  
+					+e.title.form-data.h3.ttu оформление заказа
+				.row
+					.col-6
+						+input("Фамилия Имя Отчество *:")(required)
+						+input("Номер телефона *:")(required)
+						+input("E-mail *:")(required)
+					.col-6
+						+input("Город *:")(required)
+						+input("Комментарии:")
 				+policy()
+				+e.BUTTON.btn.btn.btn-primary(type="submit") отправить
+			+e.notes
+				span * поля, обязательные для заполнения
+				span ** - в&nbsp;рабочие дни с&nbsp;8-30 до&nbsp;17-30 по&nbsp;Московскому времени
 	// #modal-call
 	
 	// end modals
