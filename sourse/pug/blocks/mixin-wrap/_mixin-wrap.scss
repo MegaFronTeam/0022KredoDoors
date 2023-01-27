@@ -178,11 +178,22 @@
 		line-height: 1.3em;
 		color: $gray-600;
 	}
+	&__col-btn {
+		display: flex;
+    align-items: flex-start;
+		@include media-breakpoint-up(xl) {
+			width: 100%;
+			max-width: calc(rem(168) + var(--bs-gutter-x));
+		}
+	}
 	&__btn {
+		--bs-btn-padding-x: #{rem(14)};
 		--bs-btn-color: #fff;
 		--bs-btn-hover-color: #fff;
 		--bs-btn-active-color: #fff;
+
 		text-transform: uppercase;
+		width: 100%;
 	}
 	&__link {
 		color: $gray-300;
@@ -215,7 +226,7 @@
 .page-head {
 	--headerH: #{rem(81)};
 	padding-top: var(--headerH);
-	@include block(1920, 1125);
+	@include block(1920, 800);
 	@include media-breakpoint-up(md) {
 		--headerH: #{rem(132)};
 	}

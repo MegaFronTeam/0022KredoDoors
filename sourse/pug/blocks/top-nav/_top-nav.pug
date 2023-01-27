@@ -42,9 +42,16 @@ mixin top-nav()
 				.col-auto.p-md-0
 					+e.logo(href='#')
 						+img('img/logo.png')
-				.col-auto.col-md.order-last.order-md-0
+				.col-auto.order-last.order-md-0
 					+e.menu-wrap
 						+menu-toggle()
+				+e.col-fixed.col-auto
+					+e.search
+						+icon('search')
+						| Поиск по сайту
+				+e.col-fixed.col-auto
+					+e.contact Связь с компанией 
+						a(href="tel:+74952482017") +7 (495) 248-20-17
 						//- p.d-none.d-lg-block Меню
 					//- .menu-mobile.menu-mobile--js
 					//- 	.menu-mobile__inner
@@ -59,7 +66,7 @@ mixin top-nav()
 						.col-auto
 							+e.lang.active(href="#") RU / 
 							+e.lang(href="#") EN
-			+e.row.row.d-none.d-md-flex
+			+e.row--fixed.row.d-none.d-md-flex
 				.col
 					+e.search
 						+icon('search')

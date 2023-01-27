@@ -32,6 +32,33 @@
 			transform: translateY(-100%);
 			// padding-top: .875rem;
 			// padding-top: 0;
+			&:before {
+				content: unset;
+			}
+			.top-nav {
+				&__menu-wrap {
+					padding-right: 0;
+					@include media-breakpoint-up(lg) {
+						padding-right: rem(70);
+					}
+				}
+				&__row {
+					--bs-gutter-x: #{rem(15)};
+					&--fixed {
+						display: none !important;
+					}
+				}
+				&__logo {
+					@include media-breakpoint-up(md) {
+						display: none;
+					}
+				}
+				&__col-fixed {
+					@include media-breakpoint-up(md) {
+						display: block;
+					}
+				}
+			}
 		}
 		&.fixed-show{
 			transform: translateY(0);

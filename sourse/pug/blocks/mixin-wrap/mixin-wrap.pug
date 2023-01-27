@@ -68,7 +68,7 @@ mixin card-item(data)
 					if data.text
 						+e.text!= data.text
 				if !data.notBtn
-					.col-md-auto
+					+e.col-btn.col-lg
 						+e.btn.btn.btn-primary(href="#") Узнать больше
 				if data.isIcon
 					.col-auto

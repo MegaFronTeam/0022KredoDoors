@@ -27,6 +27,10 @@
 			max-width: rem(876);
 			margin-left: auto;
 			margin-right: auto;
+			display: none;
+			@include media-breakpoint-up(md) {
+				display: block;
+			}
 		}
 	}
 	&__col{
