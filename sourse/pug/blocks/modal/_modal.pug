@@ -6,20 +6,21 @@ mixin modal()
 		+b.modal-win
 			+form-wrap
 				.text-center
-					+e.title.form-data.h3.ttu оформление заказа
+					+e.title.form-data.h1 Oформление заказа
 				.row
-					.col-6
-						+input("Фамилия Имя Отчество *:")(required)
-						+input("Номер телефона *:")(required)
-						+input("E-mail *:")(required)
-					.col-6
-						+input("Город *:")(required)
-						+input("Комментарии:")
-				+policy()
-				+e.BUTTON.btn.btn.btn-primary(type="submit") отправить
-			+e.notes
-				span * поля, обязательные для заполнения
-				span ** - в&nbsp;рабочие дни с&nbsp;8-30 до&nbsp;17-30 по&nbsp;Московскому времени
+					.col-md-6
+						+input('', 'text', "Фамилия Имя Отчество *:")(required)
+						+input('+7 (___) ___ - ___ - __', 'tel', "Номер телефона *:")(required)
+						+input('', 'email', "E-mail *:")(required)
+					.col-md-6
+						+input('Москва и МО','select',"Город *:")(required)
+						+input('','textarea', "Комментарии:")
+				+policy('Принимаю условия обработки персональных данных')
+				+e.footer
+					+e.BUTTON.btn.btn.btn-primary(type="submit") отправить
+					+e.notes
+						span * поля, обязательные для заполнения
+						span ** - в&nbsp;рабочие дни с&nbsp;8-30 до&nbsp;17-30 по&nbsp;Московскому времени
 	// #modal-call
 	
 	// end modals

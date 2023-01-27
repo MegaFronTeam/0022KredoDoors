@@ -1516,39 +1516,58 @@
 				<div class="form-wrap">
 					<form>
 						<div class="text-center">
-							<div class="form-wrap__title form-data h3 ttu">оформление заказа
+							<div class="form-wrap__title form-data h1">Oформление заказа
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-6">
-								<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder="Фамилия Имя Отчество *:" required="required"/>
+							<div class="col-md-6">
+								<div class="form-wrap__input-wrap form-group">
+									<label><span class="form-wrap__input-title">Фамилия Имя Отчество *:</span><input class="form-wrap__input form-control" name="text" type="text" placeholder="" required="required"/>
+									</label>
 								</div>
 								<!-- +e.input-wrap-->
-								<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder="Номер телефона *:" required="required"/>
+								<div class="form-wrap__input-wrap form-group">
+									<label><span class="form-wrap__input-title">Номер телефона *:</span><input class="form-wrap__input form-control" name="tel" type="tel" placeholder="+7 (___) ___ - ___ - __" required="required"/>
+									</label>
 								</div>
 								<!-- +e.input-wrap-->
-								<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder="E-mail *:" required="required"/>
+								<div class="form-wrap__input-wrap form-group">
+									<label><span class="form-wrap__input-title">E-mail *:</span><input class="form-wrap__input form-control" name="email" type="email" placeholder="" required="required"/>
+									</label>
 								</div>
 								<!-- +e.input-wrap-->
 							</div>
-							<div class="col-6">
-								<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder="Город *:" required="required"/>
+							<div class="col-md-6">
+								<div class="form-wrap__input-wrap form-group">
+									<label><span class="form-wrap__input-title">Город *:</span>
+										<select class="form-wrap__input form-select" name="select" required="required">
+											<option value="Москва и МО">Москва и МО</option>
+											<option value=" placeholder 1">placeholder 1</option>
+											<option value=" placeholder 2">placeholder 2</option>
+											<option value=" placeholder 3">placeholder 3</option>
+											<option value=" placeholder 4">placeholder 4</option>
+										</select>
+									</label>
 								</div>
 								<!-- +e.input-wrap-->
-								<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder="Комментарии:"/>
+								<div class="form-wrap__input-wrap form-group">
+									<label><span class="form-wrap__input-title">Комментарии:</span><textarea class="form-wrap__input form-control" name="textarea" placeholder=""></textarea>
+									</label>
 								</div>
 								<!-- +e.input-wrap-->
 							</div>
 						</div>
 						<div class="form-wrap__policy">
-							<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="checkbox" type="checkbox" checked="checked"/><small class="custom-input__text text-secondary"> Согласен на обработку и хранение моих персональных данных в соответствии с условиями</small>
+							<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="checkbox" type="checkbox"/><small class="custom-input__text text-secondary">Принимаю условия обработки персональных данных</small>
 							</label>
 						</div>
-						<button class="form-wrap__btn btn btn-primary" type="submit">отправить
-						</button>
+						<div class="form-wrap__footer">
+							<button class="form-wrap__btn btn btn-primary" type="submit">отправить
+							</button>
+							<div class="form-wrap__notes"><span>* поля, обязательные для заполнения</span><span>** - в&nbsp;рабочие дни с&nbsp;8-30 до&nbsp;17-30 по&nbsp;Московскому времени</span>
+							</div>
+						</div>
 					</form>
-				</div>
-				<div class="modal-win__notes"><span>* поля, обязательные для заполнения</span><span>** - в&nbsp;рабочие дни с&nbsp;8-30 до&nbsp;17-30 по&nbsp;Московскому времени</span>
 				</div>
 			</div>
 		</div>
