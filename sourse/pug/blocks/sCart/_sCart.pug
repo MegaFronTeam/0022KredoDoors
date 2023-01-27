@@ -13,11 +13,11 @@ mixin sCart(data)
 					mixin tr
 						tr
 							td
-								+e.img-wrap
+								+e.img-wrap(href="#")
 									.img-wrap-center
 										+img('img/sCart-1.jpg')
 							td
-								+e.title
+								+e.title(href="#")
 									span Neo
 									span 2101 СШ
 								ul
@@ -28,9 +28,14 @@ mixin sCart(data)
 								+addblock()
 							td(colspan = "2")
 								+e.price-wrap
-									.h5 240&nbsp;299&nbsp;₽
+									.h5 1242&nbsp;990&nbsp;₽
 									a(href="#") Удалить из&nbsp;корзины
 					+tr
 					+tr
 					+tr
+			+e.total
+				+e.sum 
+					span Итого на сумму:
+					b 252&nbsp;798&nbsp;₽
+				+e.btn.btn.btn-primary(href="#") заказать
 	// end sCart

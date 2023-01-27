@@ -107,6 +107,11 @@
 
 	&__title {
 		margin-bottom: rem(15);
+		color: $body-color;
+		display: inline-block;
+		&:hover {
+			color: $link-hover-color;
+		}
 		span {
 			display: block;
 			font-weight: 500;
@@ -141,6 +146,8 @@
 			}
 		}
 		a {
+			@include mt(0.2s);
+			display: inline-block;
 			font-size: rem(14);
 			flex-grow: 1;
 			padding-top: rem(8);
@@ -148,7 +155,54 @@
 			color: $secondary;
 			&:hover {
 				color: $danger;
+				text-decoration: underline;
 			}
+		}
+	}
+	&__total {
+		@include roww(#{rem(50)}, m);
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		margin-top: rem(40);
+		flex-wrap: wrap;
+		@include media-breakpoint-up(md) {
+			margin-top: rem(50);
+		}
+		@include media-breakpoint-up(xl) {
+			margin-top: rem(67);
+		}
+	}
+	&__sum {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		font-size: rem(20);
+		width: 100%;
+		margin-bottom: rem(20);
+		@include media-breakpoint-up(md) {
+			width: auto;
+			justify-content: flex-start;
+			margin-bottom: 0;
+		}
+		span {
+			// font-size: inherit;
+			display: inline-block;
+			margin-bottom: 0;
+			margin-right: rem(33);
+		}
+		b {
+			display: inline-block;
+			font-weight: 600;
+		}
+	}
+	&__btn {
+		width: 100%;
+		min-width: rem(180);
+		text-transform: uppercase;
+		@include media-breakpoint-up(md) {
+			width: auto;
 		}
 	}
 
