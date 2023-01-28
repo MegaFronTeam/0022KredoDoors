@@ -604,6 +604,16 @@ function eventHandler() {
 		}
 	};
 	inputFile();
+
+	var Sticky = new hcSticky('.sProductCard__footer-row', {
+    stickTo: 'main',
+		mobileFirst: true,
+		responsive: {
+			768: {
+				disable: true,
+			}
+		}
+  });
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

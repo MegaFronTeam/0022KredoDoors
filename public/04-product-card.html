@@ -187,7 +187,7 @@
 									<div class="sProductCard__info">Портал: NEO Гладкий наличник
 									</div>
 								</div>
-								<div class="sProductCard__wrap">
+								<div class="sProductCard__wrap d-none d-md-block">
 									<div class="sProductCard__wrap-row row">
 										<div class="col">
 											<p>Стоимость блока (коробка + полотно)</p>
@@ -233,23 +233,60 @@
 											</svg>
 										</a>
 									</div>
-									<div class="col-lg-auto">
-										<div class="sProductCard__difference">* Цены в регионах могут отличаться от цен, представленных на сайте
-											<a class="sProductCard__difference-link" href="#"> 
-												<svg class="icon icon-help ">
-													<use xlink:href="img/svg/sprite.svg#help"></use>
-												</svg>
-											</a>
-										</div>
-									</div>
+								</div>
+								<div class="sProductCard__difference">* Цены в регионах могут отличаться от цен, представленных на сайте
+									<a class="sProductCard__difference-link" href="#"> 
+										<svg class="icon icon-help ">
+											<use xlink:href="img/svg/sprite.svg#help"></use>
+										</svg>
+									</a>
 								</div>
 							</div>
 							<div class="col-lg">
 								<div class="tabs">
-									<div class="tabs__caption">
-										<div class="tabs__btn active">модель</div>
-										<div class="tabs__btn">Материал и цвет</div>
-										<div class="tabs__btn">Оформление портала</div>
+									<div class="dd-group dd-group-js">
+										<div class="dd-group__item">
+											<div class="dd-group__head dd-head-js">
+												<h5>Фильтр</h5>
+												<svg class="icon icon-chevron-down ">
+													<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
+												</svg>
+											</div>
+											<div class="dd-group__content dd-content-js">
+												<div class="tabs__caption">
+													<div class="tabs__btn active">модель</div>
+													<div class="tabs__btn">Материал и цвет</div>
+													<div class="tabs__btn">Оформление портала</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="sProductCard__wrap d-md-none">
+										<div class="sProductCard__wrap-row row">
+											<div class="col">
+												<p>Стоимость блока (коробка + полотно)</p>
+											</div>
+											<div class="col-auto">
+												<div class="sProductCard__price">10 599 ₽
+												</div>
+											</div>
+										</div>
+										<div class="sProductCard__wrap-row row">
+											<div class="col">
+												<p>Стоимость обрамления (наличник + декоры)</p>
+											</div>
+											<div class="col-auto">
+												<div class="sProductCard__price">12 000 ₽
+												</div>
+											</div>
+										</div>
+										<div class="sProductCard__full-price">22 299 ₽<span>*</span>
+										</div>
+										<div class="sProductCard__post-scriptum">
+											<svg class="icon icon-check2 ">
+												<use xlink:href="img/svg/sprite.svg#check2"></use>
+											</svg>Цена указана за дверной блок и обрамление портала
+										</div>
 									</div>
 									<div class="tabs__content active">
 										<div class="sProductCard__doors">
@@ -704,6 +741,7 @@
 		<script src="libs/swiper/swiper-bundle.min.js"></script>
 		<script src="libs/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
 		<script src="libs/inputmask/inputmask.min.js"> </script>
+		<script src="libs/hc-sticky/hc-sticky.js"> </script>
 		<script src="js/common.js"></script>
 	</body>
 </html>
