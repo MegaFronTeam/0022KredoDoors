@@ -29,6 +29,66 @@
 		font-size: 40px;
 		font-weight: 100;
 	}
+	.form-wrap {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: rem(400);
+		@include media-breakpoint-up(sm) {
+			max-width: rem(550);
+		}
+		@include media-breakpoint-up(md) {
+			max-width: rem(672);
+		}
+		&__title {
+			margin-bottom: rem(30);
+			text-transform: uppercase;
+			@include media-breakpoint-up(md) {
+				margin-bottom: rem(50);
+			}
+		}
+		&__input-title {
+			display: inline-block;
+			margin-bottom: rem(10);
+			margin-left: rem(20);
+		}
+		&__input-wrap {
+			margin-bottom: rem(15);
+			@include media-breakpoint-up(md) {
+				margin-bottom: rem(20);
+			}
+		}
+		textarea.form-control {
+			height: rem(158);
+		}
+		&__policy {
+			.custom-input__text {
+				font-size: rem(12);
+			}
+			label {
+				display: inline-block;
+				width: auto;
+			}
+		}
+		&__btn {
+			width: rem(200);
+			text-transform: uppercase;
+			margin-top: rem(30);
+		}
+		&__footer {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		&__notes {
+			text-align: center;
+			margin-top: rem(30);
+			font-size: rem(12);
+			color: $secondary;
+			span {
+				display: block;
+			}
+		}
+	}
 }
 
 a {
@@ -101,67 +161,6 @@ a {
 
 		:hover {
 			display: none;
-		}
-	}
-}
-
-.form-wrap {
-	margin-left: auto;
-	margin-right: auto;
-	max-width: rem(400);
-	@include media-breakpoint-up(sm) {
-		max-width: rem(550);
-	}
-	@include media-breakpoint-up(md) {
-		max-width: rem(672);
-	}
-	&__title {
-		margin-bottom: rem(30);
-		text-transform: uppercase;
-		@include media-breakpoint-up(md) {
-			margin-bottom: rem(50);
-		}
-	}
-	&__input-title {
-		display: inline-block;
-		margin-bottom: rem(10);
-		margin-left: rem(20);
-	}
-	&__input-wrap {
-		margin-bottom: rem(15);
-		@include media-breakpoint-up(md) {
-			margin-bottom: rem(20);
-		}
-	}
-	textarea.form-control {
-		height: rem(158);
-	}
-	&__policy {
-		.custom-input__text {
-			font-size: rem(12);
-		}
-		label {
-			display: inline-block;
-			width: auto;
-		}
-	}
-	&__btn {
-		width: rem(200);
-		text-transform: uppercase;
-		margin-top: rem(30);
-	}
-	&__footer {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-	&__notes {
-		text-align: center;
-		margin-top: rem(30);
-		font-size: rem(12);
-		color: $secondary;
-		span {
-			display: block;
 		}
 	}
 }
