@@ -14,7 +14,7 @@ mixin sProductCard(data)
 					+e.info-wrap
 						+e.info Отделка: Серый шёлк
 						+e.info Портал: NEO Гладкий наличник
-					+e.wrap
+					+e.wrap.d-none.d-md-block
 						+e.wrap-row.row
 							.col
 								p Стоимость блока (коробка + полотно)
@@ -37,11 +37,10 @@ mixin sProductCard(data)
 							+e.small-btn.btn.btn-light(href='#'): +icon('phone')
 						.col-auto
 							+e.small-btn.btn.btn-light(href='#'): +icon('heart')
-						.col-lg-auto
-							+e.difference
-								| * Цены в регионах могут отличаться от цен, представленных на сайте
-								+e.difference-link(href="#") 
-									+icon('help')
+					+e.difference
+						| * Цены в регионах могут отличаться от цен, представленных на сайте
+						+e.difference-link(href="#") 
+							+icon('help')
 				.col-lg
 					mixin customInput(img, type)
 						+in-c('radio', '', type)
@@ -52,10 +51,28 @@ mixin sProductCard(data)
 									else
 										span
 					.tabs
-						.tabs__caption
-							.tabs__btn.active модель
-							.tabs__btn Материал и цвет
-							.tabs__btn Оформление портала
+						+ddGroup()
+							+ddGroupItem('Фильтр')
+								.tabs__caption
+									.tabs__btn.active модель
+									.tabs__btn Материал и цвет
+									.tabs__btn Оформление портала
+						+e.wrap.d-md-none
+							+e.wrap-row.row
+								.col
+									p Стоимость блока (коробка + полотно)
+								.col-auto
+									+e.price 10 599 ₽
+							+e.wrap-row.row
+								.col
+									p Стоимость обрамления (наличник + декоры)
+								.col-auto
+									+e.price 12 000 ₽
+							+e.full-price 22 299 ₽
+								span *
+							+e.post-scriptum
+								+icon('check2')
+								| Цена указана за дверной блок и обрамление портала
 						.tabs__content.active
 							+e.doors
 								.h3 Форма

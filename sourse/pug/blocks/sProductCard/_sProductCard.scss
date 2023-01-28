@@ -67,6 +67,7 @@
 		background-color: $gray-100;
 		border-radius: 15px;
 		margin-bottom: rem(22);
+		width: 100%;
 		@include media-breakpoint-up(md) {
 			margin-bottom: rem(30);
 		}
@@ -122,6 +123,19 @@
 		// .btn {
 		// 	--bs-btn-padding-y: ;
 		// }
+		&.sticky {
+			--bs-gutter-x: 0;
+			--bs-gutter-y: 0;
+			top: unset !important;
+			bottom: 0 !important;
+			z-index: 310;
+			width: calc(100%) !important;
+			background-color: #fff;
+			left: 0 !important;
+			justify-content: center;
+			padding: rem(10) 0;
+			gap: rem(5);
+		}
 	}
 	&__btn {
 		--bs-btn-padding-y: #{rem(14.25)};
@@ -147,6 +161,7 @@
 		color: $gray-600;
 		position: relative;
 		max-width: rem(224);
+		margin-top: rem(10);
 	}
 	&__difference-link {
 		background-color: transparent;
@@ -365,6 +380,46 @@
 	}
 	&__text {
 		font-size: rem(14);
+	}
+	.dd-group {
+		&__item {
+			&.active {
+				.dd-group__head {
+					.icon {
+						transform: rotate(-180deg);
+					}
+				}
+			}
+		}
+		&__head {
+			display: flex;
+			align-items: center;
+			text-align: center;
+			justify-content: center;
+			background-color: $gray-100;
+			border-radius: 8px;
+			margin-bottom: rem(10);
+			padding: rem(8);
+			cursor: pointer;
+			@include media-breakpoint-up(md) {
+				display: none;
+			}
+			h5 {
+				margin-bottom: 0;
+			}
+			.icon {
+				@include mt;
+				flex: 0 0 auto;
+				font-size: rem(24);
+				margin-left: rem(5);
+			}
+		}
+		&__content {
+			display: none;
+			@include media-breakpoint-up(md) {
+				display: block !important;
+			}
+		}
 	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
