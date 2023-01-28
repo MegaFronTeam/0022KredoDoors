@@ -32,7 +32,7 @@ mixin sFilter(data)
 							.range-slider
 								input.js-range-slider(type='number' value='')
 						
-						+ddGroupItem('Цвет')
+						+ddGroupItem('Цвет', 'active')
 							// класс .check-light для темных цветов (белый чек)
 							+filterCheck('checkbox', 'Белый')(style="--checkBg: #fff")
 							+filterCheck('checkbox', 'Серый')(style="--checkBg: #DEDEDE")
@@ -40,7 +40,7 @@ mixin sFilter(data)
 							+filterCheck('checkbox', 'Темно-коричневый')(style="--checkBg: #633007").check-light
 							+filterCheck('checkbox', 'Черный')(style="--checkBg: #000000").check-light
 
-						+ddGroupItem('Материал')
+						+ddGroupItem('Материал', 'active')
 							+filterCheck('checkbox', 'Массив', 'btn')
 							+filterCheck('checkbox', 'Грунт под покраску')
 							+filterCheck('checkbox', 'Шпон', 'btn')
@@ -50,18 +50,18 @@ mixin sFilter(data)
 							+filterCheck('checkbox', 'Алюминий и стекло')
 							+filterCheck('checkbox', 'Шпон', 'btn')
 							
-						+ddGroupItem('Остекление')
+						+ddGroupItem('Остекление', 'active')
 							+filterCheck('radio', 'Показывать все')(checked)
 							+filterCheck('radio', 'Без стекла')
 							+filterCheck('radio', 'Со стеклом')
 
-						+ddGroupItem('Стиль')
+						+ddGroupItem('Стиль', 'active')
 							+filterCheck('checkbox', 'Современный стиль')
 							+filterCheck('checkbox', 'Дизайн')
 							+filterCheck('checkbox', 'Классика')
 							+filterCheck('checkbox', 'Неоклассика')
 
-						+ddGroupItem('Коллекция')
+						+ddGroupItem('Коллекция', 'active')
 							- for (var x = 0; x < 4; x++)
 								+filterCheck('checkbox', 'Mascot')
 								+filterCheck('checkbox', 'Rocca')
@@ -71,7 +71,7 @@ mixin sFilter(data)
 								+filterCheck('checkbox', 'Linea')
 							
 
-						+ddGroupItem('Прочее')
+						+ddGroupItem('Прочее', 'active')
 							+filterCheck('checkbox', 'Акция')
 							+filterCheck('checkbox', 'Новинка')
 				+e.fixedBtns
