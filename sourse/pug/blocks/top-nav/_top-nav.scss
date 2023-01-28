@@ -75,13 +75,13 @@
 		--bs-gutter-x: #{rem(14)};
 		
 		align-items: center;
-		@include media-breakpoint-up(lg) {
+		@include media-breakpoint-up(xl) {
 			--bs-gutter-x: #{rem(50)};
 		}
 	}
 	&__links {
 		@include roww('5px');
-		@include media-breakpoint-up(lg) {
+		@include media-breakpoint-up(xl) {
 			--bs-gutter-x: #{rem(25)};
 		}
 		.icon {
