@@ -489,6 +489,7 @@ function eventHandler() {
 
 	});
 
+	
 	const productCards = document.querySelectorAll('.product-card');
 	for (const productCard of productCards) {
 		const productCardSlider = new Swiper(productCard.querySelector('.product-card__slider--js'), {
@@ -517,9 +518,16 @@ function eventHandler() {
 				disableOnInteraction: false,
 			},
 		});
-
+		productCardSlider.autoplay.stop();
+		productCard.querySelector('.product-card__slider--js').addEventListener('mouseover', function(){ 
+			productCardSlider.autoplay.start();
+		})
+		productCard.querySelector('.product-card__slider--js').addEventListener('mouseout', function(){ 
+			productCardSlider.autoplay.stop();
+		})
 
 	};
+
 
 	// modal window
 
