@@ -226,6 +226,7 @@
 			}
 		}
 	}
+
 	//
 	@include media-breakpoint-up(xl) {
 	}
@@ -277,4 +278,19 @@
 
 	@include media-breakpoint-down(xs) {
 	}
+	.menu-item{
+		a{
+			// display: inline;
+			padding: 0;
+		}
+	}
+}
+
+
+.columns-4{
+	columns: 4;
+}
+
+.columns-3{
+	columns: 3;
 }

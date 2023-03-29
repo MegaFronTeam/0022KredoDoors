@@ -399,7 +399,7 @@ function eventHandler() {
 	JSCCommon.heightwindow();
 	JSCCommon.makeDDGroup();
 	JSCCommon.getCurrentYear('.currentYear');
-	JSCCommon.getRange();
+	// JSCCommon.getRange();
 	JSCCommon.sFilterMore();
 	JSCCommon.sortingMore();
 	// JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
