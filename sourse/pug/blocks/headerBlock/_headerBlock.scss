@@ -6,7 +6,10 @@
 	// min-height: 100vh;
 	
 	// min-height: 100vh;
-	min-height: calc(var(--vh, 1vh) * 100);
+	@include media-breakpoint-up(lg) {
+		
+		min-height: calc(var(--vh, 1vh) * 100);
+	}
 	.swiper-wrapper{
 		position: relative;
 	}
@@ -16,7 +19,16 @@
 	}
 	&__slide {
 		overflow: hidden;
-		min-height: calc(var(--vh, 1vh) * 100);
+		@include media-breakpoint-up(lg) {
+			min-height: calc(var(--vh, 1vh) * 100);
+			&::before{
+				display: none;
+			}
+		}
+		@include media-breakpoint-up(sm) {
+			--ratio: 7 / 10;
+		}
+		@include block(576, 700);
 	}
 
 	@include media-breakpoint-up(xl) {}
