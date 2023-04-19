@@ -29,33 +29,67 @@
 			position: fixed;
 		}
 		&.fixed{
-			transform: translateY(-100%);
+			transform: translateY(-200%);
 			// padding-top: .875rem;
 			// padding-top: 0;
 			&:before {
 				content: unset;
 			}
+			.top-nav__row,
+			.top-nav__inner-row{
+				--bs-gutter-x: 30px;
+			}
 			.top-nav {
+				background: #FFFFFF;
+				box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
 				&__menu-wrap {
 					padding-right: 0;
 					@include media-breakpoint-up(lg) {
 						padding-right: rem(70);
 					}
 				}
+				.toggle-menu-mobile{
+					--color: #{$body-color};
+					p{
+						display: none !important;
+					}
+				}
+				.top-nav__lang.active, .top-nav__lang:hover,
+				.top-nav__links .icon,
+				.top-nav__contact,
+				.top-nav__search{
+					color: $body-color;
+				}
+
 				&__row {
-					--bs-gutter-x: #{rem(15)};
+				
 					&--fixed {
 						display: none !important;
 					}
 				}
 				&__logo {
 					@include media-breakpoint-up(md) {
-						display: none;
+						// display: none;
+						width: 87px;
+						top: 100%;
+						// transform: translateX(-50%) translateY(-50%);
 					}
+				}
+				@include media-breakpoint-up(md) {
+					&__col {
+						width: auto;
+						flex: 0 0 auto;
+					}
+				}
+				&__col-fixed--search {
+					flex: 1 0 0%;
+					width: 100%;
+
 				}
 				&__col-fixed {
 					@include media-breakpoint-up(md) {
 						display: block;
+						margin-left: auto;
 					}
 				}
 			}

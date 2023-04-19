@@ -45,7 +45,7 @@ mixin top-nav()
 				.col-auto.order-last.order-md-0
 					+e.menu-wrap
 						+menu-toggle()
-				+e.col-fixed.col-auto
+				+e.col-fixed.--search.col-auto
 					+e.search
 						+icon('search')
 						| Поиск по сайту
@@ -64,7 +64,8 @@ mixin top-nav()
 								+e.link(href='#'): +icon('cart')
 								+e.link(href='#'): +icon('heart')
 						.col-auto
-							+e.lang.active(href="#") RU / 
+							+e.lang.active(href="#") RU 
+							| / 
 							+e.lang(href="#") EN
 			+e.row--fixed.row.d-none.d-md-flex
 				.col
