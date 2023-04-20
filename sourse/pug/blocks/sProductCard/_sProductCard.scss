@@ -42,6 +42,9 @@
 		@include block(282, 370);
 		max-width: rem(282);
 		margin-bottom: rem(30);
+		.img-wrap-center{
+			align-items: flex-start;
+		}
 		@include media-breakpoint-up(md) {
 			--ratio: 620/282;
 		}
