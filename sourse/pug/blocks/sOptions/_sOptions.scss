@@ -136,25 +136,44 @@
 			font-size: rem(11);
 		}
 	}
+	&__color{
+		@include a-cent(y);
+			right: rem(19);
+			width: rem(16);
+			height: rem(16);
+			border: 1.5px solid $secondary;
+			border-radius: 2px;
+			overflow: hidden;
+			// background-color: var(--checkColor, #fff);
+			img{
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				position: absolute;
+				left: 0;
+				top: 0;
+				
+			}
+	}
 }
 .check-btn--colored {
 	.check-btn__btn {
 		position: relative;
 		padding-right: rem(45);
-		&::after {
-			content: "";
-			@include a-cent(y);
-			right: rem(19);
-			width: rem(15);
-			height: rem(15);
-			border: 1.5px solid $secondary;
-			border-radius: 2px;
-			background-color: var(--checkColor, #fff);
-		}
+		// &::after {
+		// 	content: "";
+		// 	@include a-cent(y);
+		// 	right: rem(19);
+		// 	width: rem(15);
+		// 	height: rem(15);
+		// 	border: 1.5px solid $secondary;
+		// 	border-radius: 2px;
+		// 	background-color: var(--checkColor, #fff);
+		// }
 	}
 	.check-btn__input:checked {
 		& + .check-btn__btn {
-			&::after {
+			.check-btn__color {
 				border-color: $dark;
 			}
 		}
