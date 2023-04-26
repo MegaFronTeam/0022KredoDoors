@@ -86,9 +86,9 @@ const JSCCommon = {
 			if (!container && !toggle) this.closeMenu();
 		}, { passive: true });
 
-		window.addEventListener('resize', () => {
-			if (window.matchMedia("(min-width: 992px)").matches) this.closeMenu();
-		}, { passive: true });
+		// window.addEventListener('resize', () => {
+		// 	if (window.matchMedia("(min-width: 992px)").matches) this.closeMenu();
+		// }, { passive: true });
 	},
 
 	// tabs  .
@@ -151,48 +151,7 @@ const JSCCommon = {
 		InputTel.forEach(element => element.setAttribute("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}"));
 		Inputmask({ "mask": "+9(999)999-99-99", showMaskOnHover: false }).mask(InputTel);
 	},
-	// /inputMask
-	sendForm() {
-		var gets = (function () {
-			var a = window.location.search;
-			var b = new Object();
-			var c;
-			a = a.substring(1).split("&");
-			for (var i = 0; i < a.length; i++) {
-				c = a[i].split("=");
-				b[c[0]] = c[1];
-			}
-			return b;
-		})();
-		// form
-		$(document).on('submit', "form", function (e) {
-			e.preventDefault();
-			const th = $(this);
-			var data = th.serialize();
-			th.find('.utm_source').val(decodeURIComponent(gets['utm_source'] || ''));
-			th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || ''));
-			th.find('.utm_medium').val(decodeURIComponent(gets['utm_medium'] || ''));
-			th.find('.utm_campaign').val(decodeURIComponent(gets['utm_campaign'] || ''));
-			$.ajax({
-				url: 'action.php',
-				type: 'POST',
-				data: data,
-			}).done(function (data) {
-
-				Fancybox.close();
-				Fancybox.show([{ src: "#modal-thanks", type: "inline" }]);
-				// window.location.replace("/thanks.html");
-				setTimeout(function () {
-					// Done Functions
-					th.trigger("reset");
-					// $.magnificPopup.close();
-					// ym(53383120, 'reachGoal', 'zakaz');
-					// yaCounter55828534.reachGoal('zakaz');
-				}, 4000);
-			}).fail(function () { });
-
-		});
-	},
+	
 	heightwindow() {
 		// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
 		let vh = window.innerHeight * 0.01;
@@ -369,9 +328,11 @@ const JSCCommon = {
 				buttonMore.textContent = btnContent;
 				buttonMore.className = 'sFilter__btn-more';
 				sFilterParent.appendChild(buttonMore);
-				buttonMore.addEventListener('click', function () {
+				buttonMore.addEventListener('click', function (e) {
+					e.preventDefault();
 					$(this).siblings(`.sFilter__check:not(:nth-child(-n + ${sFilterShownItems}))`).toggleClass('is-visible');
 					$(this).text($(this).text() == btnContent ? 'Свернуть' : btnContent);
+
 				});
 			};
 		};
@@ -404,15 +365,6 @@ function eventHandler() {
 	JSCCommon.sortingMore();
 	// JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
 	// JSCCommon.animateScroll();
-
-	// JSCCommon.CustomInputFile(); 
-	var x = window.location.host;
-	let screenName;
-	screenName = 'screen/' + document.body.dataset.bg;
-	if (screenName && x.includes("localhost:30")) {
-		document.body.insertAdjacentHTML("beforeend", `<div class="pixel-perfect" style="background-image: url(${screenName});"></div>`);
-	}
-
 
 	function setFixedNav() {
 		let topNav = document.querySelector('.header');
@@ -628,6 +580,13 @@ function eventHandler() {
 			}
 		}
 	});
+
+	// let filterInputs = document.querySelectorAll(".sFilter .custom-input__input:checked");
+	// let filterBtn = document.querySelector(".sFilter__btn span");
+	// if(filterBtn && filterInputs){
+	// 	filterBtn.innerHTML=filterInputs.length;
+	// }
+
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
