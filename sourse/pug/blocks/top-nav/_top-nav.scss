@@ -21,9 +21,9 @@
 			--bs-gutter-x: #{rem(115)};
 			padding: rem(15) 0;
 		}
-		@include media-breakpoint-up(lg) {
-			min-height: rem(87);
-		}
+		// @include media-breakpoint-up(lg) {
+		// 	min-height: rem(87);
+		// }
 	}
 	&__col{
 		display: flex;

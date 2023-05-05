@@ -222,6 +222,10 @@
 			.h3 {
 				margin-bottom: rem(7);
 				text-transform: uppercase;
+				small{
+					text-transform: none;
+					font-size: 60%;
+				}
 			}
 		}
 	}
@@ -286,16 +290,17 @@
 	}
 	&__colors {
 		.custom-input {
-			width: calc(100% / 4);
-			@include media-breakpoint-up(sm) {
-				width: calc(100% / 8);
-			}
-			@include media-breakpoint-up(md) {
-				width: calc(100% / 11);
-			}
+			// width: calc(100% / 4);
+			// @include media-breakpoint-up(sm) {
+			// 	width: calc(100% / 8);
+			// }
+			// @include media-breakpoint-up(md) {
+			// 	width: calc(100% / 11);
+			// }
+			width: 100%;
+			max-width: rem(100);
 			@include media-breakpoint-up(lg) {
-				width: 100%;
-				max-width: rem(60);
+				max-width: rem(120);
 			}
 			&__img-wrap {
 				@include block(60, 60);

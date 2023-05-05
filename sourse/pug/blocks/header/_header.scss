@@ -35,6 +35,12 @@
 			&:before {
 				content: unset;
 			}
+			.top-nav__row{
+
+				@include media-breakpoint-up(md) { 
+			padding: rem(9) 0;
+		}
+			}
 			.top-nav__row,
 			.top-nav__inner-row{
 				--bs-gutter-x: 30px;
@@ -70,7 +76,7 @@
 				&__logo {
 					@include media-breakpoint-up(md) {
 						// display: none;
-						width: 87px;
+						width: 64px;
 						top: 100%;
 						// transform: translateX(-50%) translateY(-50%);
 					}
