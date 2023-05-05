@@ -39,14 +39,14 @@
 		}
 	}
 	&__img-wrap {
-		@include block(282, 370);
+		@include block(34, 62);
 		max-width: rem(282);
 		margin-bottom: rem(30);
 		.img-wrap-center{
 			align-items: flex-start;
 		}
 		@include media-breakpoint-up(md) {
-			--ratio: 620/282;
+			// --ratio: 620/282;
 		}
 	}
 	&__articul {
