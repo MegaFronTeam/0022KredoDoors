@@ -121,7 +121,7 @@
 		justify-content: center;
 		height: 100%;
 		text-transform: uppercase;
-		padding: rem(12) rem(19) rem(10) rem(19);
+		padding: rem(20) rem(19) rem(18) rem(19);
 		// --bs-btn-padding-x: #{rem(19)};
 		// --bs-btn-padding-y: #{rem(11)};
 
@@ -139,8 +139,8 @@
 	&__color{
 		@include a-cent(y);
 			right: rem(19);
-			width: rem(16);
-			height: rem(16);
+			width: 2rem;
+			height: 2rem;
 			border: 1.5px solid $secondary;
 			border-radius: 2px;
 			overflow: hidden;
@@ -159,7 +159,7 @@
 .check-btn--colored {
 	.check-btn__btn {
 		position: relative;
-		padding-right: rem(45);
+		padding-right: rem(55);
 		// &::after {
 		// 	content: "";
 		// 	@include a-cent(y);

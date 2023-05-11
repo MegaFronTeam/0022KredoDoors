@@ -514,7 +514,7 @@
 		flex-shrink: 0;
 		border-radius: 50%;
 		color: $body-color;
-		border: 2px solid currentColor;
+		//border: 2px solid currentColor;
 		&:hover,
 		&.active {
 			color: $white;
@@ -523,7 +523,7 @@
 		}
 		.icon {
 			@include a-cent;
-			font-size: rem(24);
+			font-size: rem(38);
 			fill: transparent;
 			stroke: currentColor;
 			stroke-width: 2px;
