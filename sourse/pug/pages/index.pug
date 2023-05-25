@@ -16,6 +16,8 @@ include ../blocks/footer/_footer.pug
 
 include ../blocks/sCardWrap/_sCardWrap.pug
 include ../blocks/sInfoBlock/_sInfoBlock.pug
+include ../blocks/sBlockVar2/_sBlockVar2.pug
+include ../blocks/sBlockVar3/_sBlockVar3.pug
 
 block variables
 	- let  mainPage= 'main-page' 
@@ -33,6 +35,8 @@ block pagecontent
 		//- +topLine
 	main
 		+headerBlock
+		+sBlockVar2
+		+sBlockVar3
 		+sCardWrap('true')
 			+e.row.row
 				.col-md-6
@@ -117,6 +121,8 @@ block pagecontent
 						title: 'Профессиональный сервис',
 						notBtn: true
 					}).--solid
+	
+	
 	+footer()
       
 

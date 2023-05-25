@@ -3,6 +3,9 @@
 	--animate-delay: 1.2s;
 	--bs-body-font-size: #{$em-base};
 
+	@include media-breakpoint-up(xl) {
+		--spacing-end: 17px
+	}
 	@include media-breakpoint-up(md) {
 
 		--sPT: #{rem(80)};

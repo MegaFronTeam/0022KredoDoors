@@ -1,0 +1,96 @@
+// start .sBlockVar3
+.sBlockVar3 {
+	// --sPT: #{rem()};
+	// --sPB: #{rem()};
+	// --sTPB: #{rem()};
+	&__row{
+		// --bs-gutter-x: #{rem()};
+		// --bs-gutter-y: #{rem()};
+
+	}
+	.section-title{
+		
+	}
+	&__col{
+
+	}
+	&__item{
+
+	}
+	&__slide{
+		@include media-breakpoint-up(xl) {
+			width: calc(25% - 23px);
+		}
+		width: 315px;
+		margin-right: 30px;
+	}
+	&__img-wrap{
+		@include block(315,498);
+		img{
+			@include a-cent;
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+			--loading-grey: #ededed;
+			background-color: var(--loading-grey);
+			background: linear-gradient(
+				100deg,
+				rgba(255, 255, 255, 0) 40%,
+				rgba(255, 255, 255, .5) 50%,
+				rgba(255, 255, 255, 0) 60%
+			) var(--loading-grey);
+			background-size: 200% 100%;
+			background-position-x: 180%;
+			animation: 1s loading ease-in-out infinite;
+		}
+	}
+	&__title{
+		position: absolute;
+		left: 1rem;
+		bottom: 1rem;
+		color: #fff;
+		font-size: rem(20);
+	}
+	&__slider{
+		@include media-breakpoint-down(xl) {
+			overflow: visible;
+		}
+		}
+
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sBlockVar3
+
+.modal-list{
+	&__title{
+		@extend .h3;
+	}
+	&__img-wrap{
+		@include block(64,48);
+		margin-bottom: 1rem;
+		img{
+			@include a-cent;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+
+		}
+	}
+	&__item{
+		border-top: 1px solid #eaeaea;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
+}
+
+
+@keyframes loading {
+  to {
+    background-position-x: -20%;
+  }
+}

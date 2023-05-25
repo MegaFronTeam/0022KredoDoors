@@ -24,11 +24,17 @@ html {
 }
 
 body {
+	&.fixed2,
 	&.fixed,
 	&.fancybox-active {
-		.header {
-			padding-right: var(--spacing-end);
-		}
+
+	.top-nav{
+
+		// margin-right: var(--spacing-end);
+	}
+	.header {
+		padding-right: var(--spacing-end);
+	}
 		margin-right: var(--spacing-end);
 	}
 	// min-width: 575px;
@@ -75,7 +81,7 @@ body {
 	&.fancybox-active {
 		overflow: hidden;
 	}
-
+	&.fixed2,
 	&.fixed {
 		overflow: hidden;
 		position: absolute;
@@ -581,4 +587,45 @@ iframe {
 	--bs-btn-color: #{$white};
 	--bs-btn-hover-color: #{$white};
 	--bs-btn-active-color: #{$white};
+}
+
+
+.modal-custom {
+	--s: 0.3s;
+	background: #fff;
+	bottom: 0;
+	max-width: 100%;
+	opacity: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	visibility: var(--pos, hidden);
+	// opacity: var(--pos, hidden);
+	opacity: 0;
+	transform: translateX(var(--pos,100%));
+	transition: all var(--s) ease-in-out;
+	width: 512px;
+	z-index: 1301;
+	display: flex;
+	flex-direction: column;
+	&__head{
+		padding: calc(15px ) 24px;
+		border-bottom: 1px solid #eaeaea;
+	}
+	&__body{
+		padding: calc(20px + 1.5vh) 24px;
+		overflow-y: auto;
+		flex-grow: 1;
+	}
+	.toggle-menu-mobile{
+		position: relative;
+		z-index: 5;
+		opacity: 0.3;
+		--h: 0.2rem;
+	}
+}
+
+.modal-custom.active {
+	--pos: 0;
+	opacity: 1;
 }

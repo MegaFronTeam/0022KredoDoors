@@ -1,0 +1,35 @@
+mixin sBlockVar3(data)
+	// start sBlockVar3
+	+b.SECTION.sBlockVar3.section#sBlockVar3&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h2 sBlockVar3
+			+e.slider--js.swiper
+				.swiper-wrapper
+					- for (var x = 0; x < 5; x++)
+						+e.slide.swiper-slide
+							+e.img-wrap(href=`#modal-about` data-modal-scroll=`#block-${x}`).link-modal-custom-js
+								+img("https://www.volhovec.ru/upload/iblock/21f/8we5dzu47m1w80cle6uxzkjsnxu6sl5e.jpg")
+							+e.title Lorem, ipsum dolor.
+				
+				.control-wrap.row
+					.col
+						.scrollbar-wrap
+							.swiper-scrollbar
+					.col-auto
+						.arrow-wrap
+							+arrow
+			+b.modal-custom(id="modal-about" )
+				+e.head
+					<div class="toggle-menu-mobile toggle-menu-mobile--2js on"><span></span></div>
+				+e.body
+					+b.modal-list
+						- for (var x = 0; x < 5; x++)
+							+e.item(id=`block-${x}`)
+								+e.title Lorem, ipsum dolor.
+									= x
+								+e.img-wrap()
+									+img("https://www.volhovec.ru/upload/iblock/21f/8we5dzu47m1w80cle6uxzkjsnxu6sl5e.jpg")
+								+e.caption
+									p Покрытие алюминиевой кромки и скрытого короба в цветах золото, серебро, шампань и коньяк выполнены по технологии анодирования. Это делает изделие износостойким, а отделку равномерной и максимально приближенной к естественным цветам. При этом поверхность становится сатинированной и тактильно приятной на ощупь.
+	// end sBlockVar3
