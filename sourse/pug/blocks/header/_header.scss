@@ -32,6 +32,11 @@
 			transform: translateY(-200%);
 			// padding-top: .875rem;
 			// padding-top: 0;
+			.search-block{
+				input{
+					color:var(--bs-body-color);
+				}
+			}
 			&:before {
 				content: unset;
 			}
