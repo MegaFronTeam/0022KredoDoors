@@ -147,9 +147,9 @@
 	}
 
 	&__img-wrap {
-		@include block(1, 1);
+		@include block(175, 320);
 		width: 100%;
-		max-width: rem(228);
+		max-width: rem(175);
 	}
 	&__price-wrap {
 		display: flex;
@@ -183,7 +183,7 @@
 		}
 	}
 	&__total {
-		@include roww(#{rem(50)}, m);
+		@include roww(#{rem(20)}, m);
 		display: flex;
 		align-items: center;
 		justify-content: flex-end;
@@ -194,6 +194,7 @@
 		}
 		@include media-breakpoint-up(xl) {
 			margin-top: rem(67);
+			--bs-gutter-x: #{rem(50)};
 		}
 	}
 	&__sum {
@@ -222,11 +223,16 @@
 	}
 	&__btn {
 		width: 100%;
+		@include media-breakpoint-up(lg){
+
 		min-width: rem(180);
-		text-transform: uppercase;
-		@include media-breakpoint-up(md) {
-			width: auto;
 		}
+		text-transform: uppercase;
+		@include media-breakpoint-up(sm) {
+			width: auto;
+			margin-bottom: 0;
+		}
+		margin-bottom: 1rem;
 	}
 
 	@include media-breakpoint-up(xl) {

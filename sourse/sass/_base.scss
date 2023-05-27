@@ -629,3 +629,9 @@ iframe {
 	--pos: 0;
 	opacity: 1;
 }
+
+.btn{
+	@include media-breakpoint-down(xl){
+		--bs-btn-padding-x: 1.5rem;
+	}
+}
