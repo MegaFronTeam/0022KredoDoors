@@ -635,3 +635,8 @@ iframe {
 		--bs-btn-padding-x: 1.5rem;
 	}
 }
+.arrow-wrap{
+	.swiper-button-hand{
+		background: none !important;
+	}
+}
