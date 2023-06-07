@@ -148,15 +148,32 @@
 		--bs-btn-active-color: #fff;
 
 		text-transform: uppercase;
+		.icon{
+			@include  mt;
+		}
+
 	}
 	&__small-btn {
 		--bs-btn-padding-x: #{rem(10)};
     --bs-btn-padding-y: #{rem(10)};
 		.icon {
 			font-size: rem(24);
-			fill: none;
 			stroke: currentColor;
 			stroke-width: 2px;
+			@include mt;
+		}
+		&:not(.active){
+			.icon{
+
+			fill: none;
+			}
+		}
+		&.active{
+			--bs-btn-active-bg: #f5f5f1;
+			--bs-btn-active-border-color: #f5f5f1;
+			.icon{
+				fill: currentColor;
+			}
 		}
 	}
 	&__difference {
