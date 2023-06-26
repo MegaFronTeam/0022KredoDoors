@@ -187,13 +187,17 @@
 		display: flex;
 		align-items: center;
 		justify-content: flex-end;
-		margin-top: rem(40);
+		padding-top: rem(40);
 		flex-wrap: wrap;
+		margin-top: -20px;
+		>*{
+			margin-top: 20px;
+		}
 		@include media-breakpoint-up(md) {
-			margin-top: rem(50);
+			padding-top: rem(50);
 		}
 		@include media-breakpoint-up(xl) {
-			margin-top: rem(67);
+			padding-top: rem(67);
 			--bs-gutter-x: #{rem(50)};
 		}
 	}

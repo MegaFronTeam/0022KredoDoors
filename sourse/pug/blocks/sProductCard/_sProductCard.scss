@@ -168,9 +168,9 @@
 			fill: none;
 			}
 		}
+		--bs-btn-active-bg: #f5f5f1;
+		--bs-btn-active-border-color: #f5f5f1;
 		&.active{
-			--bs-btn-active-bg: #f5f5f1;
-			--bs-btn-active-border-color: #f5f5f1;
 			.icon{
 				fill: currentColor;
 			}

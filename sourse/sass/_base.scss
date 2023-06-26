@@ -642,6 +642,11 @@ iframe {
 }
 
 .total-line{
+	&:not(.active){
+		transform: translateY(100%) scaleY(0);
+		transform-origin: bottom;
+	}
+	@include mt;
 	position: fixed;
 	width: 100%;
 	left: 0;
@@ -719,6 +724,11 @@ iframe {
 	
 	.sProductCard__small-btn {
 		--bs-btn-padding-x: .5rem;
+		--bs-btn-border-color: var(--bs-primary);
+		--bs-btn-active-border-color: var(--bs-primary);
+		&.active{
+
+		}
 			@media (max-width: 1199.98px){
 			--bs-btn-padding-x: .5rem;
 		}

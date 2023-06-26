@@ -400,12 +400,22 @@ function eventHandler() {
 		scrollTop > 400 ? topNav.classList.add('fixed-show') : topNav.classList.remove('fixed-show');
 	}
 
+	function showFixedLine() {
+		let topNav = document.querySelector('.total-line--js');
+		if (!topNav) return;
+		var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+		// console.log(scrollTop);
+
+		(scrollTop + window.innerHeight) > ($('.sProductCard').offset().top + $('.sProductCard').innerHeight()) ? topNav.classList.add('active') : topNav.classList.remove('active');
+	}
 	function whenResize() {
 		setFixedNav();
+		showFixedLine();
 	}
-
+	
 	window.addEventListener('scroll', () => {
 		setFixedNav();
+		showFixedLine();
 	}, {
 		passive: true
 	});

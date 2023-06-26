@@ -34,51 +34,51 @@ block pagecontent
 	main 
 		+page-head('page-head-bg-2.jpg', 'Современный взгляд на классику', 'Межкомнатные двери', 'Неоклассика', 'Neo', 'Межкомнатная дверь Neo 2101. Серый шёлк')
 		+sProductCard
+		+b.total-line.d-none.d-md-block
+			.container
+				.row.sProductCard__wrap-row
+					.col-6.d-none.d-lg-block
+						.row
+							.col.d-flex
+								p
+									span.d-none.d-xl-inline Стоимость 
+									| блока (коробка + полотно)
+								.sProductCard__price 10 599 ₽
+								
+							.col.d-flex
+								p
+									span.d-none.d-xl-inline Стоимость 
+									| обрамления (наличник + декоры)
+								.sProductCard__price 12 000 ₽
+
+					.col-auto
+						.sProductCard__price 
+							span.d-none.d-xl-inline итого:
+							| 22 299 ₽
+					.col
+						+e.info
+							+icon("icon_help")
+							+e.dropdown
+								+e.dropdown-item
+									img(src="img/svg/icon_check.svg", alt="")
+									| Цена за&nbsp;дверной блок (полотно, коробка, петли) и&nbsp;обрамление портала без замка и&nbsp;ручек
+								+e.dropdown-item
+									img(src="img/svg/icon_check.svg", alt="")
+									| Цена за&nbsp;стандартное полотно 600/700/800&times;2000/2050
+								+e.dropdown-item
+									img(src="img/svg/icon-ruler.svg", alt="")
+									| Укажите нужный размер в&nbsp;комментариях к&nbsp;заказу
+					.col-auto
+						a.sProductCard__btn.btn.btn-primary(href='#')
+							| добавить в корзину
+
+
+					.col-auto
+						a.sProductCard__small-btn.btn.btn-light(href='#')
+							+icon("heart")
+					.col-auto
+						a.sProductCard__small-btn.btn.btn-light(href='#')
+							+icon("phone")
 		+sInfoBlock('sInfoBlock-bg-4.jpg', 'ЗАВЕРШИТЕ ВЫБРАННЫЙ ОБРАЗ ВАШЕГО ИНТЕРЬЕРА', 'Cтильной ручкой с итальянским дизайном', 'Узнать больше')
 		+sSimilarCollections()
 	+footer()
-	+b.total-line.d-none.d-md-block
-		.container
-			.row.sProductCard__wrap-row
-				.col-6.d-none.d-lg-block
-					.row
-						.col.d-flex
-							p
-								span.d-none.d-xl-inline Стоимость 
-								| блока (коробка + полотно)
-							.sProductCard__price 10 599 ₽
-							
-						.col.d-flex
-							p
-								span.d-none.d-xl-inline Стоимость 
-								| обрамления (наличник + декоры)
-							.sProductCard__price 12 000 ₽
-
-				.col-auto
-					.sProductCard__price 
-						span.d-none.d-xl-inline итого:
-						| 22 299 ₽
-				.col
-					+e.info
-						+icon("icon_help")
-						+e.dropdown
-							+e.dropdown-item
-								img(src="img/svg/icon_check.svg", alt="")
-								| Цена за&nbsp;дверной блок (полотно, коробка, петли) и&nbsp;обрамление портала без замка и&nbsp;ручек
-							+e.dropdown-item
-								img(src="img/svg/icon_check.svg", alt="")
-								| Цена за&nbsp;стандартное полотно 600/700/800&times;2000/2050
-							+e.dropdown-item
-								img(src="img/svg/icon-ruler.svg", alt="")
-								| Укажите нужный размер в&nbsp;комментариях к&nbsp;заказу
-				.col-auto
-					a.sProductCard__btn.btn.btn-primary(href='#')
-						| добавить в корзину
-
-
-				.col-auto
-					a.sProductCard__small-btn.btn.btn-light(href='#')
-						+icon("heart")
-				.col-auto
-					a.sProductCard__small-btn.btn.btn-light(href='#')
-						+icon("phone")
