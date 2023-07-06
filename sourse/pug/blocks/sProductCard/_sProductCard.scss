@@ -61,9 +61,16 @@
 		}
 	}
 	&__info {
-		font-size: rem(14);
 		line-height: 1.3em;
-		color: $gray-600;
+		&:not(:first-child){
+			font-size: rem(14);
+			color: $gray-600;
+		}
+		&:first-child{
+				font-size: rem(16);
+				margin-bottom: rem(10);
+				font-weight: 500;
+		}
 	}
 	&__wrap {
 		padding: rem(20);
