@@ -817,3 +817,39 @@ iframe {
   width: 100%;
   height: 100%;
 }
+
+.sub-tr{
+  td{
+	&:nth-child(1){
+	  @include media-breakpoint-up(xl){
+
+	  padding-left: 100px;
+	  }
+	  padding-left: 50px;
+	}
+
+  }
+  .sCart__img-wrap{
+	//margin-left: rem(100)
+	position: relative;
+	&::after{
+	  content: '';
+	  position: absolute;
+	  //left: 0;
+	  @include media-breakpoint-up(xl){
+
+	  right: calc(100% + 40px);
+	  }
+	  right: calc(100% + 10px);
+	  top: calc(-1 * var(--sp-y));
+	  background-color: #fff;
+	  background-image: url(../img/icon-more-details.svg);
+	  background-repeat: no-repeat;
+	  background-position: center right;
+	  width: 100%;
+	  height: calc(100% + var(--sp-y) * 2 + 2px);
+	  z-index: 2;
+	}
+  }
+
+}

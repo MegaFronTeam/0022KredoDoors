@@ -110,12 +110,15 @@
 					}
 				}
 			}
-			padding: rem(10);
+			padding: var(--sp-y) rem(10);
+		  	--sp-y: #{rem(10)};
 			@include media-breakpoint-up(md) {
-				padding: rem(20) rem(3);
+		  	--sp-y: #{rem(20)};
+				padding: var(--sp-y) rem(3);
 			}
 			@include media-breakpoint-up(xl) {
-				padding: rem(26) rem(3);
+		  	--sp-y: #{rem(26)};
+				padding:   var(--sp-y) rem(3);
 			}
 		}
 		ul {
